@@ -1,52 +1,60 @@
-const jobs = [
-    { title: "Software Engineer", company: "Google", source: "LinkedIn", date: "2025-03-20" },
-    { title: "Data Analyst", company: "Amazon", source: "Indeed", date: "2025-03-18" },
-    { title: "Product Manager", company: "Facebook", source: "Glassdoor", date: "2025-03-22" },
-    { title: "UX Designer", company: "Apple", source: "LinkedIn", date: "2025-03-15" }
+// Mock data for demonstration
+const jobSources = [
+    { name: 'Greenhouse', url: 'https://www.google.com/search?q="Business%20Operations"+site:greenhouse.io+remote&tbs=qdr:d' },
+    { name: 'Lever', url: 'https://www.google.com/search?q="Business%20Operations"+site:lever.co+remote&tbs=qdr:d' },
+    { name: 'Ashby', url: 'https://www.google.com/search?q="Business%20Operations"+site:ashbyhq.com+remote&tbs=qdr:d' },
+    { name: 'Remote Rocketship', url: 'https://remoterocketship.com/?ref=briansjobsearch&jobTitle=Business%20Operations' },
+    // Add more sources as needed
 ];
-document.getElementById("searchButton").addEventListener("click", function() {
-    generateList(); // This should be your function that processes the search
-});
-function displayJobs(filteredJobs) {
-    const jobList = document.getElementById("jobList");
-    jobList.innerHTML = ""; 
 
-    filteredJobs.forEach(job => {
-        let li = document.createElement("li");
-        li.innerHTML = `<strong>${job.title}</strong> - ${job.company} <br> <em>${job.source}</em> | ${job.date}`;
-        jobList.appendChild(li);
-    });
-}
-
-function filterJobs() {
-    let searchInput = document.getElementById("searchInput").value.toLowerCase();
-    let sourceFilter = document.getElementById("sourceFilter").value;
-
-    let filteredJobs = jobs.filter(job => 
-        (job.title.toLowerCase().includes(searchInput) || 
-        job.company.toLowerCase().includes(searchInput)) &&
-        (sourceFilter === "all" || job.source === sourceFilter)
-    );
-
-    displayJobs(filteredJobs);
-}
-
-function sortJobs() {
-    let sortBy = document.getElementById("sortSelect").value;
-    let sortedJobs = [...jobs];
-
-    if (sortBy === "date") {
-        sortedJobs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (sortBy === "title") {
-        sortedJobs.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sortBy === "company") {
-        sortedJobs.sort((a, b) => a.company.localeCompare(b.company));
-    }
-
-    displayJobs(sortedJobs);
-}
 function generateList() {
-    alert("Search button clicked! Implement job search logic here.");
+    const jobTitle = document.getElementById('jobTitle').value || 'Business Operations';
+    const timeFilter = document.getElementById('timeFilter').value;
+    const excludeRemote = document.getElementById('excludeRemote').checked;
+    const location = document.getElementById('locationSelect').value;
+
+    const displayTitle = document.getElementById('displayTitle');
+    const resultsContainer = document.getElementById('results');
+
+    // Update display title
+    displayTitle.textContent = `${jobTitle} - Past ${timeFilter === '24hours' ? '24 Hours' : timeFilter}`;
+
+    // Clear previous results
+    resultsContainer.innerHTML = `<h3>${jobTitle} - Past ${timeFilter === '24hours' ? '24 Hours' : timeFilter}</h3>`;
+
+    // Create results list
+    const ul = document.createElement('ul');
+    jobSources.forEach((source, index) => {
+        const li = document.createElement('li');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `${source.name.toLowerCase().replace(/\s+/g, '-')}-${jobTitle.replace(/\s+/g, '-')}`;
+        checkbox.name = checkbox.id;
+
+        const label = document.createElement('label');
+        label.htmlFor = checkbox.id;
+
+        const link = document.createElement('a');
+        link.href = source.url;
+        link.textContent = source.name;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+
+        label.appendChild(link);
+        li.appendChild(checkbox);
+        li.appendChild(label);
+        ul.appendChild(li);
+    });
+
+    resultsContainer.appendChild(ul);
 }
-// Initial display
-displayJobs(jobs);
+
+// Optional: Add event listener to job title input to allow Enter key submission
+document.getElementById('jobTitle').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        generateList();
+    }
+});
+
+// Initialize with default search on page load
+document.addEventListener('DOMContentLoaded', generateList);
