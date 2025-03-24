@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian's Job Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Search</h1>
+        <input type="text" id="searchInput" placeholder="Search for jobs..." onkeyup="filterJobs()">
+        
+        <div class="controls">
+            <label for="sourceFilter">Source:</label>
+            <select id="sourceFilter" onchange="filterJobs()">
+                <option value="all">All</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Indeed">Indeed</option>
+                <option value="Glassdoor">Glassdoor</option>
+            </select>
+
+            <label for="sortSelect">Sort by:</label>
+            <select id="sortSelect" onchange="sortJobs()">
+                <option value="date">Newest</option>
+                <option value="title">Title</option>
+                <option value="company">Company</option>
+            </select>
+        </div>
+
+        <ul id="jobList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
