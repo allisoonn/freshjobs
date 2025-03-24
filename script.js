@@ -3,7 +3,7 @@ const jobSources = [
     { name: 'Greenhouse', url: 'https://www.google.com/search?q="Business%20Operations"+site:greenhouse.io+remote&tbs=qdr:d' },
     { name: 'Lever', url: 'https://www.google.com/search?q="Business%20Operations"+site:lever.co+remote&tbs=qdr:d' },
     { name: 'Ashby', url: 'https://www.google.com/search?q="Business%20Operations"+site:ashbyhq.com+remote&tbs=qdr:d' },
-    { name: 'Remote Rocketship', url: 'https://remoterocketship.com/?ref=briansjobsearch&jobTitle=Business%20Operations' },
+    { name: 'Remote Rocketship', url: 'https://remoterocketship.com/?ref=freshjobs&jobTitle=Business%20Operations' },
     // Add more sources as needed
 ];
 
