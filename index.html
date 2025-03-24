@@ -1,5 +1,1776 @@
 <!DOCTYPE html>
+<html lang="en"><head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="impact-site-verification" value="5680b643-7f7f-46e6-b4c5-38c209981af7">
+    <meta name="description" content="Discover your next job with Brian's Job Search. Optimized for Google, this is a user-friendly and efficient way to explore a wide range of career opportunities. Start your journey towards a fulfilling job today!">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Brian's Job Search</title>
+    <style>
+      ::backdrop,
+      :root {
+        --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+        --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        --standard-border-radius: 5px;
+        --bg: #f4f4f4;
+        --accent-bg: #f5f7ff;
+        --text: #212121;
+        --text-light: #585858;
+        --border: #898EA4;
+        --accent: #0d47a1;
+        --accent-text: var(--bg);
+        --code: #d81b60;
+        --preformatted: #444;
+        --marked: #ffdd33;
+        --disabled: #efefef;
+        --linktext: #0000EE;
+        --visitedlink: #0000EE;
+        --resultsbg: #fff;
+      }
 
+      @media (prefers-color-scheme: dark) {
+
+        ::backdrop,
+        :root {
+          color-scheme: dark;
+          --bg: #000;
+          --accent-bg: #2b2b2b;
+          --text: #fff;
+          --text-light: #fff;
+          --accent: #ffb300;
+          --accent-text: var(--bg);
+          --code: #f06292;
+          --preformatted: #ccc;
+          --disabled: #efefef;
+          --linktext: #8ab4f8;
+          --visitedlink: #8ab4f8;
+          --resultsbg: #000;
+        }
+
+        img,
+        video {
+          opacity: .8
+        }
+      }
+
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box
+      }
+
+      input,
+      progress,
+      select,
+      textarea {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      html {
+        font-family: var(--sans-font);
+        scroll-behavior: smooth
+      }
+
+      body {
+        color: var(--text);
+        background-color: var(--bg);
+        font-size: 1.15rem;
+        line-height: 1.5;
+        display: grid;
+        grid-template-columns: 1fr min(45rem, 90%) 1fr;
+        margin: 0
+      }
+
+      body>* {
+        grid-column: 2
+      }
+
+      body>header {
+        background-color: var(--accent-bg);
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        padding: 0 .5rem 2rem .5rem;
+        grid-column: 1/-1
+      }
+
+      body>header>:only-child {
+        margin-block-start: 2rem
+      }
+
+      body>header h1 {
+        max-width: 1200px;
+        margin: 1rem auto
+      }
+
+      body>header p {
+        max-width: 40rem;
+        margin: 1rem auto
+      }
+
+      main {
+        padding-top: 0
+      }
+
+      body>footer {
+        margin-top: 4rem;
+        padding: 2rem 1rem 1.5rem 1rem;
+        font-size: .9rem;
+        text-align: center;
+        border-top: 1px solid var(--text)
+      }
+
+      h1 {
+        font-size: 3rem
+      }
+
+      h2 {
+        font-size: 2.6rem;
+        margin-top: 3rem
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-top: 3rem
+      }
+
+      h4 {
+        font-size: 1.44rem
+      }
+
+      h5 {
+        font-size: 1.15rem
+      }
+
+      h6 {
+        font-size: .96rem
+      }
+
+      p {
+        margin: 1.5rem 0
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        overflow-wrap: break-word
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.1
+      }
+
+      @media only screen and (max-width:720px) {
+        h1 {
+          font-size: 2.5rem
+        }
+
+        h2 {
+          font-size: 2.1rem
+        }
+
+        h3 {
+          font-size: 1.75rem
+        }
+
+        h4 {
+          font-size: 1.25rem
+        }
+      }
+
+      a,
+      a:visited {}
+
+      a:hover {
+        text-decoration: none
+      }
+
+      .button,
+      a.button,
+      button,
+      input[type=button],
+      input[type=reset],
+      input[type=submit],
+      label[type=button] {
+        border: 1px solid var(--accent);
+        background-color: var(--accent);
+        color: var(--accent-text);
+        padding: .5rem .9rem;
+        text-decoration: none;
+        line-height: normal
+      }
+
+      .button[aria-disabled=true],
+      button[disabled],
+      input:disabled,
+      select:disabled,
+      textarea:disabled {
+        cursor: not-allowed;
+        background-color: var(--disabled);
+        border-color: var(--disabled);
+        color: var(--text-light)
+      }
+
+      input[type=range] {
+        padding: 0
+      }
+
+      abbr[title] {
+        cursor: help;
+        text-decoration-line: underline;
+        text-decoration-style: dotted
+      }
+
+      .button:not([aria-disabled=true]):hover,
+      button:enabled:hover,
+      input[type=button]:enabled:hover,
+      input[type=reset]:enabled:hover,
+      input[type=submit]:enabled:hover,
+      label[type=button]:hover {
+        filter: brightness(1.4);
+        cursor: pointer
+      }
+
+      .button:focus-visible,
+      button:focus-visible:where(:enabled),
+      input:enabled:focus-visible:where([type=submit], [type=reset], [type=button]) {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px
+      }
+
+      header>nav {
+        font-size: 1rem;
+        line-height: 2;
+        padding: 1rem 0 0 0
+      }
+
+      header>nav ol,
+      header>nav ul {
+        align-content: space-around;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0
+      }
+
+      header>nav ol li,
+      header>nav ul li {
+        display: inline-block
+      }
+
+      header>nav a,
+      header>nav a:visited {
+        margin: 0 .5rem 1rem .5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--standard-border-radius);
+        color: var(--text);
+        display: inline-block;
+        padding: .1rem 1rem;
+        text-decoration: none
+      }
+
+      header>nav a.current,
+      header>nav a:hover,
+      header>nav a[aria-current=page] {
+        border-color: var(--accent);
+        color: var(--accent);
+        cursor: pointer
+      }
+
+      @media only screen and (max-width:720px) {
+        header>nav a {
+          border: none;
+          padding: 0;
+          text-decoration: underline;
+          line-height: 1
+        }
+      }
+
+      aside,
+      details,
+      pre,
+      progress {
+        background-color: var(--accent-bg);
+        border: 1px solid var(--border);
+        border-radius: var(--standard-border-radius);
+        margin-bottom: 1rem
+      }
+
+      aside {
+        font-size: 1rem;
+        width: 30%;
+        padding: 0 15px;
+        margin-inline-start: 15px;
+        float: right
+      }
+
+      [dir=rtl] aside {
+        float: left
+      }
+
+      @media only screen and (max-width:720px) {
+        aside {
+          width: 100%;
+          float: none;
+          margin-inline-start: 0
+        }
+      }
+
+      article,
+      dialog,
+      fieldset {
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: var(--standard-border-radius);
+        margin-bottom: 1rem
+      }
+
+      article h2:first-child,
+      section h2:first-child {
+        margin-top: 1rem
+      }
+
+      section {
+        border-top: 1px solid var(--text);
+        border-bottom: 1px solid var(--border);
+        padding: 2rem 1rem;
+        padding-top: 0;
+        margin: 3rem 0
+      }
+
+      section+section,
+      section:first-child {
+        border-top: 0;
+        padding-top: 0
+      }
+
+      section:last-child {
+        border-bottom: 0;
+        padding-bottom: 0
+      }
+
+      details {
+        padding: .7rem 1rem
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        padding: .7rem 1rem;
+        margin: -.7rem -1rem;
+        word-break: break-all
+      }
+
+      details[open]>summary+* {
+        margin-top: 0
+      }
+
+      details[open]>summary {
+        margin-bottom: .5rem
+      }
+
+      details[open]>:last-child {
+        margin-bottom: 0
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 1.5rem 0
+      }
+
+      td,
+      th {
+        border: 1px solid var(--border);
+        text-align: start;
+        padding: .5rem
+      }
+
+      th {
+        background-color: var(--accent-bg);
+        font-weight: 700
+      }
+
+      tr:nth-child(even) {
+        background-color: var(--accent-bg)
+      }
+
+      table caption {
+        font-weight: 700;
+        margin-bottom: .5rem
+      }
+
+      .button,
+      button,
+      input,
+      select,
+      textarea {
+        font-size: inherit;
+        font-family: inherit;
+        padding: .5rem;
+        margin-bottom: .5rem;
+        border-radius: var(--standard-border-radius);
+        box-shadow: none;
+        max-width: 100%;
+        display: inline-block
+      }
+
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background-color: var(--resultsbg);
+        border: 1px solid var(--border)
+      }
+
+      label {
+        display: block
+      }
+
+      textarea:not([cols]) {
+        width: 100%
+      }
+
+      select:not([multiple]) {
+        background-image: linear-gradient(45deg, transparent 49%, var(--text) 51%), linear-gradient(135deg, var(--text) 51%, transparent 49%);
+        background-position: calc(100% - 15px), calc(100% - 10px);
+        background-size: 5px 5px, 5px 5px;
+        background-repeat: no-repeat;
+        padding-inline-end: 25px
+      }
+
+      [dir=rtl] select:not([multiple]) {
+        background-position: 10px, 15px
+      }
+
+      input[type=checkbox],
+      input[type=radio] {
+        vertical-align: middle;
+        position: relative;
+        width: min-content;
+        background-color: var(--text);
+      }
+
+      input[type=checkbox]+label,
+      input[type=radio]+label {
+        display: inline-block
+      }
+
+      input[type=radio] {
+        border-radius: 100%
+      }
+
+      input[type=checkbox]:checked,
+      input[type=radio]:checked {
+        background-color: var(--text);
+      }
+
+      input[type=checkbox]:checked::after {
+        content: " ";
+        width: .18em;
+        height: .32em;
+        border-radius: 0;
+        position: absolute;
+        top: .05em;
+        left: .17em;
+        background-color: transparent;
+        border-right: solid var(--bg) .08em;
+        border-bottom: solid var(--bg) .08em;
+        font-size: 1.8em;
+        transform: rotate(45deg)
+      }
+
+      input[type=radio]:checked::after {
+        content: " ";
+        width: .25em;
+        height: .25em;
+        border-radius: 100%;
+        position: absolute;
+        top: .125em;
+        background-color: var(--bg);
+        left: .125em;
+        font-size: 32px
+      }
+
+      @media only screen and (max-width:720px) {
+
+        input,
+        select,
+        textarea {
+          width: 100%
+        }
+      }
+
+      input[type=color] {
+        height: 2.5rem;
+        padding: .2rem
+      }
+
+      input[type=file] {
+        border: 0
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: var(--border);
+        margin: 1rem auto
+      }
+
+      mark {
+        padding: 2px 5px;
+        border-radius: var(--standard-border-radius);
+        background-color: var(--marked);
+        color: #000
+      }
+
+      mark a {
+        color: #0d47a1
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--standard-border-radius)
+      }
+
+      figure {
+        margin: 0;
+        display: block;
+        overflow-x: auto
+      }
+
+      figcaption {
+        text-align: center;
+        font-size: .9rem;
+        color: var(--text-light);
+        margin-bottom: 1rem
+      }
+
+      blockquote {
+        margin-inline-start: 2rem;
+        margin-inline-end: 0;
+        margin-block: 2rem;
+        padding: .4rem .8rem;
+        border-inline-start: .35rem solid var(--accent);
+        color: var(--text-light);
+        font-style: italic
+      }
+
+      cite {
+        font-size: .9rem;
+        color: var(--text-light);
+        font-style: normal
+      }
+
+      dt {
+        color: var(--text-light)
+      }
+
+      code,
+      kbd,
+      pre,
+      pre span,
+      samp {
+        font-family: var(--mono-font);
+        color: var(--code)
+      }
+
+      kbd {
+        color: var(--preformatted);
+        border: 1px solid var(--preformatted);
+        border-bottom: 3px solid var(--preformatted);
+        border-radius: var(--standard-border-radius);
+        padding: .1rem .4rem
+      }
+
+      pre {
+        padding: 1rem 1.4rem;
+        max-width: 100%;
+        overflow: auto;
+        color: var(--preformatted)
+      }
+
+      pre code {
+        color: var(--preformatted);
+        background: 0 0;
+        margin: 0;
+        padding: 0
+      }
+
+      progress {
+        width: 100%
+      }
+
+      progress:indeterminate {
+        background-color: var(--accent-bg)
+      }
+
+      progress::-webkit-progress-bar {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent-bg)
+      }
+
+      progress::-webkit-progress-value {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent)
+      }
+
+      progress::-moz-progress-bar {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent);
+        transition-property: width;
+        transition-duration: .3s
+      }
+
+      progress:indeterminate::-moz-progress-bar {
+        background-color: var(--accent-bg)
+      }
+
+      dialog {
+        max-width: 40rem;
+        margin: auto
+      }
+
+      dialog::backdrop {
+        background-color: var(--bg);
+        opacity: .8
+      }
+
+      @media only screen and (max-width:720px) {
+        dialog {
+          max-width: 100%;
+          margin: auto 1em
+        }
+      }
+
+      sub,
+      sup {
+        vertical-align: baseline;
+        position: relative
+      }
+
+      sup {
+        top: -.4em
+      }
+
+      sub {
+        top: .3em
+      }
+
+      .notice {
+        background: var(--resultsbg);
+        border: 2px solid var(--text);
+        border-radius: var(--standard-border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        line-height: 1.6;
+      }
+
+      /* General Body Styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--bg);
+        margin: 0;
+        padding: 20px;
+        color: var(--text);
+        text-align: center;
+        /* Center text for the whole page */
+      }
+
+      .container {
+        /* ... [Container styles] ... */
+        text-align: left;
+        /* Align text to the left inside the container */
+      }
+
+      h1,
+      footer {
+        text-align: center;
+        /* Center align specific elements */
+      }
+
+      h2 {
+        text-align: left;
+        /* Center align specific elements */
+      }
+
+      #results ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+        /* Ensure results are left-aligned */
+      }
+
+      #results li {
+        background-color: var(--resultsbg);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        text-align: left;
+        /* Ensure each result item is left-aligned */
+      }
+
+      /* Form Elements Styling */
+      input[type="text"],
+      select {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid var(--text);
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: var(--text);
+      }
+
+      /* Button Styling */
+      button {
+        background-color: var(--text);
+        /* A darker shade of blue */
+        color: var(--resultsbg);
+        padding: 10px 20px;
+        border: 1px solid var(--text);
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+
+      button:hover {
+        background-color: var(--resultsbg);
+        color: var(--text);
+        /* An even darker shade for hover state */
+      }
+
+      /* Results List Styling */
+      #results ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #results li {
+        background-color: var(--resultsbg);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+
+      #results li label {
+        margin-left: 10px;
+      }
+
+      /* Link Styling */
+      a {
+        text-decoration: none;
+        color: var(--linktext);
+        visited: var(--visitedlink);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        /* added for robustness */
+        border-width: 0;
+      }
+
+      /* Sticky Footer Styles */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      .wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      ::placeholder {
+        color: var(--text);
+      }
+
+      footer {
+        background-color: var(--bg);
+        /* Or your chosen footer background color */
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer a {
+        color: var(--text);
+        /* Change to a darker color for higher contrast */
+        text-decoration: underline;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        /* Optional: for better visibility when hovered */
+      }
+
+      /* NEW OVERRIDE CLASSES: dark-mode & light-mode */
+      :root.light-mode {
+        color-scheme: light !important;
+        --bg: #f4f4f4 !important;
+        --accent-bg: #f5f7ff !important;
+        --text: #212121 !important;
+        --text-light: #585858 !important;
+        --accent: #0d47a1 !important;
+        --accent-text: var(--bg) !important;
+        --code: #d81b60 !important;
+        --preformatted: #444 !important;
+        --marked: #ffdd33 !important;
+        --disabled: #efefef !important;
+        --linktext: #0000EE !important;
+        --visitedlink: #0000EE !important;
+        --resultsbg: #fff !important;
+      }
+
+      :root.dark-mode {
+        color-scheme: dark !important;
+        --bg: #000 !important;
+        --accent-bg: #2b2b2b !important;
+        --text: #fff !important;
+        --text-light: #fff !important;
+        --accent: #ffb300 !important;
+        --accent-text: var(--bg) !important;
+        --code: #f06292 !important;
+        --preformatted: #ccc !important;
+        --disabled: #efefef !important;
+        --linktext: #8ab4f8 !important;
+        --visitedlink: #8ab4f8 !important;
+        --resultsbg: #000 !important;
+      }
+
+      /* Advanced search options styling */
+      #advancedOptions {
+        display: none;
+        background-color: var(--accent-bg);
+        padding: 15px;
+        border-radius: var(--standard-border-radius);
+        margin: 15px 0;
+        text-align: left;
+      }
+
+      .option-group {
+        margin-bottom: 10px;
+      }
+
+      .option-group label {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--disabled);
+        transition: .4s;
+        border-radius: 24px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--resultsbg);
+        transition: .4s;
+        border-radius: 50%;
+      }
+
+      input:checked+.slider {
+        background-color: var(--text);
+      }
+
+      input:checked+.slider:before {
+        transform: translateX(26px);
+      }
+
+      #locationSelect {
+        max-width: 250px;
+      }
+
+      @media only screen and (max-width:720px) {
+        #advancedOptions {
+          padding: 10px;
+        }
+
+        .option-group {
+          margin-bottom: 15px;
+        }
+
+        #locationSelect {
+          max-width: 100%;
+        }
+      }
+
+      /* Show/hide the advanced time options */
+      #timeFilter option[value="1hour"],
+      #timeFilter option[value="4hours"],
+      #timeFilter option[value="8hours"],
+      #timeFilter option[value="12hours"] {
+        display: none;
+      }
+
+      .show-all-times #timeFilter option[value="1hour"],
+      .show-all-times #timeFilter option[value="4hours"],
+      .show-all-times #timeFilter option[value="8hours"],
+      .show-all-times #timeFilter option[value="12hours"] {
+        display: block;
+      }
+    </style>
+    <script>
+      function generateRecommendedJobLinks(jobTitle) {
+        const recommendedJobs = getRelatedTitles(jobTitle);
+        const recommendedJobLinksDiv = document.getElementById('recommendedJobLinks');
+        recommendedJobLinksDiv.innerHTML = '';
+        // Only add the "Try:" text and links if there are recommended jobs
+        if (recommendedJobs.length > 0) {
+          const tryText = document.createElement('span');
+          tryText.textContent = 'Try: ';
+          recommendedJobLinksDiv.appendChild(tryText);
+          recommendedJobs.forEach(recommendedJob => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.textContent = recommendedJob;
+            link.onclick = function() {
+              updateSearchAndURL(recommendedJob);
+              window.scrollTo(0, 0);
+              return false; // Prevent default link behavior
+            };
+            recommendedJobLinksDiv.appendChild(link);
+            recommendedJobLinksDiv.appendChild(document.createTextNode(' | ')); // Separator
+          });
+          // Remove the last separator
+          if (recommendedJobs.length > 0) {
+            recommendedJobLinksDiv.lastChild.remove();
+          }
+        }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        populateLocations();
+        document.getElementById("jobTitle").addEventListener('keypress', function(event) {
+          if (event.key === 'Enter') {
+            generateList();
+          }
+        });
+        // Handle advanced options toggling
+        document.getElementById("excludeRemote").addEventListener('change', function() {
+          if (document.getElementById("jobTitle").value.trim() !== "") {
+            generateList();
+          }
+        });
+        document.getElementById("locationSelect").addEventListener('change', function() {
+          if (document.getElementById("jobTitle").value.trim() !== "") {
+            generateList();
+          }
+        });
+        document.getElementById("advancedLink").addEventListener('click', function(event) {
+          event.preventDefault();
+          const advancedOptions = document.getElementById("advancedOptions");
+          if (advancedOptions.style.display === "none" || !advancedOptions.style.display) {
+            advancedOptions.style.display = "block";
+            this.textContent = "Simple Search";
+            document.body.classList.add('show-all-times');
+          } else {
+            advancedOptions.style.display = "none";
+            this.textContent = "Advanced Search";
+            document.body.classList.remove('show-all-times');
+            // Reset advanced options
+            document.getElementById("excludeRemote").checked = false;
+            document.getElementById("locationSelect").value = "";
+            // Remove advanced parameters from the URL
+            var queryParams = new URLSearchParams(window.location.search);
+            queryParams.delete("remote");
+            queryParams.delete("location");
+            history.pushState(null, null, "?" + queryParams.toString());
+            // Regenerate results
+            if (document.getElementById("jobTitle").value.trim() !== "") {
+              generateList();
+            }
+          }
+          window.scrollTo(0, 0);
+        });
+        // 2) Now parse URL parameters
+        const queryParams = new URLSearchParams(window.location.search);
+        const jobParam = queryParams.get('job');
+        const timeParam = queryParams.get('time');
+        const remoteParam = queryParams.get('remote');
+        const locationParam = queryParams.get('location');
+        if (jobParam) {
+          document.getElementById("jobTitle").value = decodeURIComponent(jobParam.replace(/\+/g, ' '));
+          if (timeParam) {
+            document.getElementById("timeFilter").value = timeParam;
+          }
+          // Set advanced options if they exist
+          if (remoteParam === 'false') {
+            document.getElementById("excludeRemote").checked = true;
+          }
+          if (locationParam) {
+            document.getElementById("advancedOptions").style.display = "block";
+            document.getElementById("advancedLink").textContent = "Simple Search";
+            document.body.classList.add('show-all-times');
+            document.getElementById("locationSelect").value = locationParam;
+          }
+          // Finally, generate the listings
+          generateList();
+        }
+        // Recommended job links (if any)
+        generateRecommendedJobLinks();
+        // 3) Override light/dark mode if ?mode= was specified
+        const mode = queryParams.get('mode');
+        if (mode === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        } else if (mode === 'light') {
+          document.documentElement.classList.add('light-mode');
+        }
+        const resumeAds = [{
+          copy: '📸 Professional business headshots at',
+          linktext: 'HeadshotPro',
+          url: 'https://www.headshotpro.com/?via=briansjobsearch'
+        }, {
+          copy: '🔥 Outsmart the ATS, stop automatic rejections with',
+          linktext: 'Jobscan',
+          url: 'https://jobscanco.pxf.io/briansjobsearch'
+        }, {
+          copy: '🤖 Job Application Tracker, AI Resume Builder, and Checker at',
+          linktext: 'Huntr',
+          url: 'https://huntr.co/?via=briansjobsearch'
+        }, {
+          copy: '🚀 Find more remote jobs at',
+          linktext: 'Remote Rocketship',
+          url: 'https://remoterocketship.com/?ref=briansjobsearch'
+        }];
+        const randomAd = resumeAds[Math.floor(Math.random() * resumeAds.length)];
+        const resumeAdEl = document.getElementById('resumeAd');
+        resumeAdEl.innerHTML = `${randomAd.copy}
+      
+									
+									<a href="${randomAd.url}" target="_blank" rel="noopener noreferrer">${randomAd.linktext}</a>`;
+      });
+
+      function populateLocations() {
+        const locationSelect = document.getElementById("locationSelect");
+        // Define countryQueries
+        var countryQueries = {
+          "canada": "+canada",
+          "usa": "+usa",
+          "uk": "+uk",
+          "germany": "+germany",
+          "france": "+france",
+          "australia": "+australia",
+          "brazil": "+brazil",
+          "china": "+china",
+          "russia": "+russia",
+          "india": "+india",
+          "japan": "+japan",
+          "south korea": "+south korea",
+          "mexico": "+mexico",
+          "italy": "+italy",
+          "spain": "+spain",
+          "netherlands": "+netherlands",
+          "sweden": "+sweden",
+          "norway": "+norway",
+          "denmark": "+denmark",
+          "finland": "+finland",
+          "poland": "+poland",
+          "ireland": "+ireland",
+          "belgium": "+belgium",
+          "switzerland": "+switzerland",
+          "new zealand": "+new zealand",
+          "argentina": "+argentina",
+          "chile": "+chile",
+          "south africa": "+south africa",
+          "egypt": "+egypt",
+          "saudi arabia": "+saudi arabia",
+          "turkey": "+turkey",
+          "greece": "+greece",
+          "portugal": "+portugal",
+          "austria": "+austria",
+          "hungary": "+hungary",
+          "czech republic": "+czech republic",
+          "slovakia": "+slovakia",
+          "romania": "+romania",
+          "bulgaria": "+bulgaria",
+          "croatia": "+croatia",
+          "serbia": "+serbia",
+          "malaysia": "+malaysia",
+          "singapore": "+singapore",
+          "indonesia": "+indonesia",
+          "philippines": "+philippines",
+          "vietnam": "+vietnam",
+          "thailand": "+thailand",
+          "israel": "+israel",
+          "united arab emirates": "+united arab emirates",
+          "qatar": "+qatar",
+          "kuwait": "+kuwait",
+          "nigeria": "+nigeria",
+          "kenya": "+kenya",
+          "ghana": "+ghana",
+          "morocco": "+morocco",
+          "estonia": "+estonia",
+          "lithuania": "+lithuania",
+          "latvia": "+latvia",
+          "slovenia": "+slovenia",
+          "luxembourg": "+luxembourg",
+          "ukraine": "+ukraine",
+          "united states": "+usa",
+          "united states of america": "+usa",
+          "usa": "+usa",
+          "pakistan": "+pakistan",
+          "bangladesh": "+bangladesh",
+          "sri lanka": "+sri lanka",
+          "kazakhstan": "+kazakhstan",
+          "uzbekistan": "+uzbekistan",
+          "ethiopia": "+ethiopia",
+          "tanzania": "+tanzania",
+          "uganda": "+uganda",
+          "ivory coast": "+ivory coast",
+          "algeria": "+algeria",
+          "oman": "+oman",
+          "bahrain": "+bahrain",
+          "jordan": "+jordan",
+          "lebanon": "+lebanon",
+          "jamaica": "+jamaica",
+          "dominican republic": "+dominican republic",
+          "cuba": "+cuba",
+          "colombia": "+colombia",
+          "peru": "+peru",
+          "ecuador": "+ecuador",
+          "uruguay": "+uruguay",
+          "paraguay": "+paraguay",
+          "fiji": "+fiji",
+          "papua new guinea": "+papua new guinea",
+          "samoa": "+samoa",
+          "armenia": "+armenia",
+          "azerbaijan": "+azerbaijan",
+          "alabama": "+alabama",
+          "alaska": "+alaska",
+          "arizona": "+arizona",
+          "arkansas": "+arkansas",
+          "california": "+california",
+          "colorado": "+colorado",
+          "connecticut": "+connecticut",
+          "delaware": "+delaware",
+          "florida": "+florida",
+          "georgia": "+georgia",
+          "hawaii": "+hawaii",
+          "idaho": "+idaho",
+          "illinois": "+illinois",
+          "indiana": "+indiana",
+          "iowa": "+iowa",
+          "kansas": "+kansas",
+          "kentucky": "+kentucky",
+          "louisiana": "+louisiana",
+          "maine": "+maine",
+          "maryland": "+maryland",
+          "massachusetts": "+massachusetts",
+          "michigan": "+michigan",
+          "minnesota": "+minnesota",
+          "mississippi": "+mississippi",
+          "missouri": "+missouri",
+          "montana": "+montana",
+          "nebraska": "+nebraska",
+          "nevada": "+nevada",
+          "new hampshire": "+new hampshire",
+          "new jersey": "+new jersey",
+          "new mexico": "+new mexico",
+          "new york": "+new york",
+          "north carolina": "+north carolina",
+          "north dakota": "+north dakota",
+          "ohio": "+ohio",
+          "oklahoma": "+oklahoma",
+          "oregon": "+oregon",
+          "pennsylvania": "+pennsylvania",
+          "rhode island": "+rhode island",
+          "south carolina": "+south carolina",
+          "south dakota": "+south dakota",
+          "tennessee": "+tennessee",
+          "texas": "+texas",
+          "utah": "+utah",
+          "vermont": "+vermont",
+          "virginia": "+virginia",
+          "washington": "+washington",
+          "west virginia": "+west virginia",
+          "wisconsin": "+wisconsin",
+          "wyoming": "+wyoming"
+        };
+        // Store this in the window object so other functions can access it
+        window.countryQueries = countryQueries;
+        // Clear existing options
+        locationSelect.innerHTML = '';
+        // Add "All Locations" option first
+        const defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.textContent = "All Locations";
+        locationSelect.appendChild(defaultOption);
+        // Add USA next
+        const usaOption = document.createElement('option');
+        usaOption.value = "usa";
+        usaOption.textContent = "United States";
+        locationSelect.appendChild(usaOption);
+        // Separate countries and states
+        const countries = [];
+        const states = [];
+        Object.keys(countryQueries).forEach(key => {
+          // Skip duplicate USA entries (already added above)
+          if (key === "united states" || key === "united states of america" || key === "usa") {
+            return;
+          }
+          // Check if it's a US state
+          const usStates = ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey", "new mexico", "new york", "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming"];
+          if (usStates.includes(key)) {
+            states.push(key);
+          } else {
+            countries.push(key);
+          }
+        });
+        // Sort countries alphabetically
+        countries.sort();
+        // Sort states alphabetically
+        states.sort();
+        // Add countries
+        countries.forEach(country => {
+          const option = document.createElement('option');
+          option.value = country;
+          option.textContent = country.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+          locationSelect.appendChild(option);
+        });
+        // Add a divider
+        const dividerOption = document.createElement('option');
+        dividerOption.disabled = true;
+        dividerOption.textContent = "─────── US States ───────";
+        locationSelect.appendChild(dividerOption);
+        // Add states
+        states.forEach(state => {
+          const option = document.createElement('option');
+          option.value = state;
+          option.textContent = state.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+          locationSelect.appendChild(option);
+        });
+      }
+
+      function reloadAnalyticsTracker() {
+        const tracker = document.getElementById("analyticsTracker");
+        if (tracker) {
+          const baseUrl = "https://queue.simpleanalyticscdn.com/noscript.gif";
+          const params = new URLSearchParams({
+            timezone: "Europe/Amsterdam",
+            unique: Math.random().toString(), // Use a random number to bypass cache
+          });
+          tracker.src = `${baseUrl}?${params.toString()}`;
+        }
+      }
+
+      function updateSearchAndURL(jobTitle) {
+        // Update the job title in the search bar
+        document.getElementById("jobTitle").value = jobTitle;
+        // Get all search parameters
+        const timeFilter = document.getElementById("timeFilter").value;
+        const excludeRemote = document.getElementById("excludeRemote").checked;
+        const location = document.getElementById("locationSelect").value;
+        // Update the URL with all parameters
+        var queryParams = new URLSearchParams(window.location.search);
+        queryParams.set("job", encodeURIComponent(jobTitle));
+        queryParams.set("time", timeFilter);
+        // Add advanced parameters if they're set
+        if (excludeRemote) {
+          queryParams.set("remote", "false");
+        } else {
+          queryParams.delete("remote");
+        }
+        if (location) {
+          queryParams.set("location", location);
+        } else {
+          queryParams.delete("location");
+        }
+        const mode = queryParams.get("mode");
+        if (mode) {
+          queryParams.set("mode", mode);
+        }
+        history.pushState(null, null, "?" + queryParams.toString());
+        reloadAnalyticsTracker();
+        // After updating the URL, generate the job list again
+        generateList();
+      }
+
+      function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
+
+      function updateURL(jobTitles, timeFilter) {
+        var queryParams = new URLSearchParams(window.location.search);
+        queryParams.set("job", jobTitles.join(","));
+        queryParams.set("time", timeFilter);
+        // Add advanced parameters
+        const excludeRemote = document.getElementById("excludeRemote").checked;
+        const location = document.getElementById("locationSelect").value;
+        if (excludeRemote) {
+          queryParams.set("remote", "false");
+        } else {
+          queryParams.delete("remote");
+        }
+        if (location) {
+          queryParams.set("location", location);
+        } else {
+          queryParams.delete("location");
+        }
+        // Optionally, add other UTM parameters
+        queryParams.set("campaign", jobTitles.join(","));
+        history.pushState(null, null, "?" + queryParams.toString());
+        reloadAnalyticsTracker();
+      }
+      const jobGroups = {
+        media: ['Video Producer', 'Film Editor', 'Content Producer', 'Content Creator', 'Media Manager', 'Digital Marketing Specialist', 'Multimedia Designer', 'Social Media Strategist', 'Brand Content Manager', 'Video Production Coordinator', 'Creative Director'],
+        qas: ['Qa Engineer', 'Software Tester', 'Automation Engineer', 'Test Analyst', 'Quality Assurance Specialist', 'Test Engineer', 'Qa', 'Sdet', 'Software Development Engineer In Test', 'Test Engineer', 'Release Manager', 'Quality Assurance', 'Software Quality Assurance'],
+        softwareDev: ['Software Engineer', 'Developer', 'Systems Engineer', 'Application Developer', 'Software Architect', 'Full Stack Developer', 'Frontend', 'Engineering Manager', 'React'],
+        projectManagement: ['Project Manager', 'Program Manager', 'Operations Manager', 'Team Lead', 'Project Coordinator'],
+        productManagement: ['Product Manager', 'Product Owner', 'Program Manager', 'Innovation Manager', 'Technical Product Manager', 'Digital Product Manager'],
+        salesforce: ['Salesforce Administrator', 'Salesforce Developer', 'Salesforce Consultant', 'Salesforce Business Analyst', 'Database Administrator', 'IT Systems Administrator'],
+        data: ['Data Analyst', 'Business Intelligence Analyst', 'Data Scientist', 'Power Bi', 'Python', 'Data Engineer', 'Data', 'Business Analyst'],
+        scrumMaster: ['Scrum Master', 'Agile Coach', 'Lean Practioner', 'Kanban Coach', 'Agile Project Facilitator', 'Agile Transformation Lead', 'Agile Team Coach', 'Iteration Manager', 'Scrum']
+      };
+
+      function getRelatedTitles(jobTitle) {
+        for (const group in jobGroups) {
+          if (jobGroups[group].includes(jobTitle)) {
+            return jobGroups[group].filter(title => title !== jobTitle);
+          }
+        }
+        return []; // Return an empty array if the job title is not found
+      }
+
+      function generateList() {
+        var jobTitleInput = document.getElementById("jobTitle").value;
+        var jobTitles = jobTitleInput.split(',').map(function(title) {
+          return toTitleCase(title.trim());
+        });
+        var matchedJobTitle = jobTitles.find(title => Object.keys(jobGroups).some(group => jobGroups[group].includes(title)));
+        if (matchedJobTitle) {
+          document.getElementById("recommendedJobLinks").style.display = "block";
+          generateRecommendedJobLinks(matchedJobTitle);
+        } else {
+          document.getElementById("recommendedJobLinks").style.display = "none";
+        }
+        var timeFilter = document.getElementById("timeFilter").value;
+        var resultsDiv = document.getElementById("results");
+        var displayTitle = document.getElementById("displayTitle");
+        // Get advanced options
+        var excludeRemote = document.getElementById("excludeRemote").checked;
+        var selectedLocation = document.getElementById("locationSelect").value;
+        var timeQueryParam = '';
+        var formattedTimeFilter = '';
+        switch (timeFilter) {
+          case '24hours':
+            formattedTimeFilter = 'Past 24 Hours';
+            timeQueryParam = '&tbs=qdr:d';
+            break;
+          case '48hours':
+            formattedTimeFilter = 'Past 48 Hours';
+            timeQueryParam = '&tbs=qdr:h48';
+            break;
+          case '72hours':
+            formattedTimeFilter = 'Past 72 Hours';
+            timeQueryParam = '&tbs=qdr:h72';
+            break;
+          case '1hour':
+            formattedTimeFilter = 'Past Hour';
+            timeQueryParam = '&tbs=qdr:h1';
+            break;
+          case '4hours':
+            formattedTimeFilter = 'Past 4 Hours';
+            timeQueryParam = '&tbs=qdr:h4';
+            break;
+          case '8hours':
+            formattedTimeFilter = 'Past 8 Hours';
+            timeQueryParam = '&tbs=qdr:h8';
+            break;
+          case '12hours':
+            formattedTimeFilter = 'Past 12 Hours';
+            timeQueryParam = '&tbs=qdr:h12';
+            break;
+          case 'week':
+            formattedTimeFilter = 'Past Week';
+            timeQueryParam = '&tbs=qdr:w';
+            break;
+          case 'month':
+            formattedTimeFilter = 'Past Month';
+            timeQueryParam = '&tbs=qdr:m';
+            break;
+          default:
+            formattedTimeFilter = 'All';
+        }
+        resultsDiv.innerHTML = '';
+        var sites = {
+          "greenhouse.io": "Greenhouse",
+          "lever.co": "Lever",
+          "ashbyhq.com": "Ashby",
+          "remoterocketship.com": "Remote Rocketship",
+          "pinpointhq.com": "Pinpoint",
+          // "remotive.com": "Remotive",
+          "jobs.*": "Jobs Subdomain",
+          "careers.*": "Careers Subdomain",
+          "people.*": "People Subdomain",
+          "recruiting.paylocity.com": "Paylocity",
+          "keka.com": "Keka",
+          "jobs.workable.com": "Workable",
+          "breezy.hr": "BreezyHR",
+          "wellfound.com": "Wellfound",
+          "workatastartup.com": "Y Combinator Work at a Startup",
+          "oraclecloud.com": "Oracle Cloud",
+          "myworkdayjobs.com": "Workday Jobs",
+          "recruitee.com": "Recruitee",
+          "rippling-ats.com": "Rippling",
+          "careerpuck.com": "CareerPuck",
+          "jobs.smartrecruiters.com": "SmartRecruiters",
+          "homerun.co": "Homerun",
+          "gem.com": "Gem",
+          "trakstar.com": "Trakstar",
+          "catsone.com": "Cats",
+          "applytojob.com": "JazzHR",
+          "jobvite.com": "Jobvite",
+          "icims.com": "iCIMS",
+          "dover.io": "Dover",
+          "notion.site": "Notion",
+          "builtin.com/job/": "Builtin",
+          "adp": "ADP"
+        };
+        var countryQueries = {
+          "canada": "+canada",
+          "usa": "+usa",
+          "uk": "+uk",
+          "germany": "+germany",
+          "france": "+france",
+          "australia": "+australia",
+          "brazil": "+brazil",
+          "china": "+china",
+          "russia": "+russia",
+          "india": "+india",
+          "japan": "+japan",
+          "south korea": "+south korea",
+          "mexico": "+mexico",
+          "italy": "+italy",
+          "spain": "+spain",
+          "netherlands": "+netherlands",
+          "sweden": "+sweden",
+          "norway": "+norway",
+          "denmark": "+denmark",
+          "finland": "+finland",
+          "poland": "+poland",
+          "ireland": "+ireland",
+          "belgium": "+belgium",
+          "switzerland": "+switzerland",
+          "new zealand": "+new zealand",
+          "argentina": "+argentina",
+          "chile": "+chile",
+          "south africa": "+south africa",
+          "egypt": "+egypt",
+          "saudi arabia": "+saudi arabia",
+          "turkey": "+turkey",
+          "greece": "+greece",
+          "portugal": "+portugal",
+          "austria": "+austria",
+          "hungary": "+hungary",
+          "czech republic": "+czech republic",
+          "slovakia": "+slovakia",
+          "romania": "+romania",
+          "bulgaria": "+bulgaria",
+          "croatia": "+croatia",
+          "serbia": "+serbia",
+          "malaysia": "+malaysia",
+          "singapore": "+singapore",
+          "indonesia": "+indonesia",
+          "philippines": "+philippines",
+          "vietnam": "+vietnam",
+          "thailand": "+thailand",
+          "israel": "+israel",
+          "united arab emirates": "+united arab emirates",
+          "qatar": "+qatar",
+          "kuwait": "+kuwait",
+          "nigeria": "+nigeria",
+          "kenya": "+kenya",
+          "ghana": "+ghana",
+          "morocco": "+morocco",
+          "estonia": "+estonia",
+          "lithuania": "+lithuania",
+          "latvia": "+latvia",
+          "slovenia": "+slovenia",
+          "luxembourg": "+luxembourg",
+          "ukraine": "+ukraine",
+          "united states": "+usa",
+          "united states of america": "+usa",
+          "usa": "+usa",
+          "pakistan": "+pakistan",
+          "bangladesh": "+bangladesh",
+          "sri lanka": "+sri lanka",
+          "kazakhstan": "+kazakhstan",
+          "uzbekistan": "+uzbekistan",
+          "ethiopia": "+ethiopia",
+          "tanzania": "+tanzania",
+          "uganda": "+uganda",
+          "ivory coast": "+ivory coast",
+          "algeria": "+algeria",
+          "oman": "+oman",
+          "bahrain": "+bahrain",
+          "jordan": "+jordan",
+          "lebanon": "+lebanon",
+          "jamaica": "+jamaica",
+          "dominican republic": "+dominican republic",
+          "cuba": "+cuba",
+          "colombia": "+colombia",
+          "peru": "+peru",
+          "ecuador": "+ecuador",
+          "uruguay": "+uruguay",
+          "paraguay": "+paraguay",
+          "fiji": "+fiji",
+          "papua new guinea": "+papua new guinea",
+          "samoa": "+samoa",
+          "armenia": "+armenia",
+          "azerbaijan": "+azerbaijan",
+          "alabama": "+alabama",
+          "alaska": "+alaska",
+          "arizona": "+arizona",
+          "arkansas": "+arkansas",
+          "california": "+california",
+          "colorado": "+colorado",
+          "connecticut": "+connecticut",
+          "delaware": "+delaware",
+          "florida": "+florida",
+          "georgia": "+georgia",
+          "hawaii": "+hawaii",
+          "idaho": "+idaho",
+          "illinois": "+illinois",
+          "indiana": "+indiana",
+          "iowa": "+iowa",
+          "kansas": "+kansas",
+          "kentucky": "+kentucky",
+          "louisiana": "+louisiana",
+          "maine": "+maine",
+          "maryland": "+maryland",
+          "massachusetts": "+massachusetts",
+          "michigan": "+michigan",
+          "minnesota": "+minnesota",
+          "mississippi": "+mississippi",
+          "missouri": "+missouri",
+          "montana": "+montana",
+          "nebraska": "+nebraska",
+          "nevada": "+nevada",
+          "new hampshire": "+new hampshire",
+          "new jersey": "+new jersey",
+          "new mexico": "+new mexico",
+          "new york": "+new york",
+          "north carolina": "+north carolina",
+          "north dakota": "+north dakota",
+          "ohio": "+ohio",
+          "oklahoma": "+oklahoma",
+          "oregon": "+oregon",
+          "pennsylvania": "+pennsylvania",
+          "rhode island": "+rhode island",
+          "south carolina": "+south carolina",
+          "south dakota": "+south dakota",
+          "tennessee": "+tennessee",
+          "texas": "+texas",
+          "utah": "+utah",
+          "vermont": "+vermont",
+          "virginia": "+virginia",
+          "washington": "+washington",
+          "west virginia": "+west virginia",
+          "wisconsin": "+wisconsin",
+          "wyoming": "+wyoming"
+        };
+        updateURL(jobTitles, timeFilter);
+        // Use selected location if provided
+        var countryQueryPart = selectedLocation ? countryQueries[selectedLocation] : '';
+        jobTitles.forEach(function(jobTitle) {
+          // Handle -remote in job title for backward compatibility
+          var excludeRemoteInTitle = jobTitle.toLowerCase().endsWith('-remote');
+          var shouldExcludeRemote = excludeRemote || excludeRemoteInTitle;
+          if (excludeRemoteInTitle) {
+            jobTitle = jobTitle.slice(0, -7); // Remove '-remote' from the job title
+          }
+          // Check if job title includes any of the countries and set the country query part
+          var detectedCountry = '';
+          if (!selectedLocation) { // Only check title for location if no location is explicitly selected
+            Object.keys(countryQueries).forEach(function(country) {
+              if (jobTitle.toLowerCase().includes(country)) {
+                countryQueryPart = countryQueries[country];
+                detectedCountry = country;
+              }
+            });
+            // If a country is detected, remove it from the job title
+            if (detectedCountry) {
+              jobTitle = jobTitle.replace(new RegExp(detectedCountry, 'ig'), '').trim();
+            }
+          }
+          var list = document.createElement("ul");
+          Object.keys(sites).forEach(function(site) {
+            var listItem = document.createElement("li");
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = site + '-' + jobTitle;
+            checkbox.name = site + '-' + jobTitle;
+            var label = document.createElement("label");
+            label.htmlFor = site + '-' + jobTitle;
+            var encodedJobTitle = encodeURIComponent(jobTitle.trim());
+            var url = '';
+            // Handle different sites
+            if (site === "remoterocketship.com") {
+              url = `https://${site}/?ref=briansjobsearch&jobTitle=${encodedJobTitle}`;
+            } else if (site === "remotive.com") {
+              url = `https://${site}/?via=briansjobsearch&query=${encodedJobTitle}`;
+            } else if (site === "adp") {
+              let googleQuery = '"' + jobTitle.trim() + '"';
+              googleQuery += " (site:workforcenow.adp.com OR site:myjobs.adp.com)";
+              if (!shouldExcludeRemote) {
+                googleQuery += " remote";
+              }
+              if (countryQueryPart) {
+                googleQuery += " " + countryQueryPart.substring(1);
+              }
+              url = `https://www.google.com/search?q=${encodeURIComponent(googleQuery)}${timeQueryParam}`;
+            } else {
+              url = `https://www.google.com/search?q="${encodedJobTitle}"+site:${site}`;
+              if (!shouldExcludeRemote) {
+                url += "+remote";
+              }
+              if (countryQueryPart) {
+                url += countryQueryPart;
+              }
+              url += timeQueryParam;
+            }
+            var link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+            link.textContent = sites[site];
+            // Add event listener to the link
+            link.addEventListener('click', function() {
+              checkbox.checked = true;
+            });
+            label.appendChild(link);
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            list.appendChild(listItem);
+          });
+          var titleHeader = document.createElement("h3");
+          titleHeader.textContent = jobTitle + ' - ' + formattedTimeFilter;
+          if (selectedLocation) {
+            titleHeader.textContent += ' - ' + document.getElementById("locationSelect").options[document.getElementById("locationSelect").selectedIndex].text;
+          }
+          if (shouldExcludeRemote) {
+            titleHeader.textContent += ' (Excluding Remote)';
+          }
+          resultsDiv.appendChild(titleHeader);
+          resultsDiv.appendChild(list);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Brian's Job Search</h1>
+      <div id="searchForm">
+        <label for="jobTitle" class="visually-hidden">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Job Title" aria-describedby="jobTitleHelp">
+        <span id="jobTitleHelp" class="visually-hidden">Enter the title of the job you are searching for</span>
+        <label for="timeFilter" class="visually-hidden">Time Filter</label>
+        <select id="timeFilter" aria-describedby="timeFilterHelp">
+          <option value="all">All</option>
+          <option value="1hour">Past Hour</option>
+          <option value="4hours">Past 4 Hours</option>
+          <option value="8hours">Past 8 Hours</option>
+          <option value="12hours">Past 12 Hours</option>
+          <option value="24hours" selected="">Past 24 Hours</option>
+          <option value="48hours">Past 48 Hours</option>
+          <option value="72hours">Past 72 Hours</option>
+          <option value="week">Past Week</option>
+          <option value="month">Past Month</option>
+        </select>
+        <span id="timeFilterHelp" class="visually-hidden">Select how recent the job postings should be</span>
+        <button onclick="generateList()">Start</button>
+        <!-- Advanced Options Section -->
+        <div id="advancedOptions" class="notice">
+          <div class="option-group">
+            <label for="excludeRemote">Exclude Remote Jobs: </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="excludeRemote">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="option-group">
+            <label for="locationSelect">Location: </label>
+            <select id="locationSelect"><option value="">All Locations</option><option value="usa">United States</option><option value="algeria">Algeria</option><option value="argentina">Argentina</option><option value="armenia">Armenia</option><option value="australia">Australia</option><option value="austria">Austria</option><option value="azerbaijan">Azerbaijan</option><option value="bahrain">Bahrain</option><option value="bangladesh">Bangladesh</option><option value="belgium">Belgium</option><option value="brazil">Brazil</option><option value="bulgaria">Bulgaria</option><option value="canada">Canada</option><option value="chile">Chile</option><option value="china">China</option><option value="colombia">Colombia</option><option value="croatia">Croatia</option><option value="cuba">Cuba</option><option value="czech republic">Czech Republic</option><option value="denmark">Denmark</option><option value="dominican republic">Dominican Republic</option><option value="ecuador">Ecuador</option><option value="egypt">Egypt</option><option value="estonia">Estonia</option><option value="ethiopia">Ethiopia</option><option value="fiji">Fiji</option><option value="finland">Finland</option><option value="france">France</option><option value="germany">Germany</option><option value="ghana">Ghana</option><option value="greece">Greece</option><option value="hungary">Hungary</option><option value="india">India</option><option value="indonesia">Indonesia</option><option value="ireland">Ireland</option><option value="israel">Israel</option><option value="italy">Italy</option><option value="ivory coast">Ivory Coast</option><option value="jamaica">Jamaica</option><option value="japan">Japan</option><option value="jordan">Jordan</option><option value="kazakhstan">Kazakhstan</option><option value="kenya">Kenya</option><option value="kuwait">Kuwait</option><option value="latvia">Latvia</option><option value="lebanon">Lebanon</option><option value="lithuania">Lithuania</option><option value="luxembourg">Luxembourg</option><option value="malaysia">Malaysia</option><option value="mexico">Mexico</option><option value="morocco">Morocco</option><option value="netherlands">Netherlands</option><option value="new zealand">New Zealand</option><option value="nigeria">Nigeria</option><option value="norway">Norway</option><option value="oman">Oman</option><option value="pakistan">Pakistan</option><option value="papua new guinea">Papua New Guinea</option><option value="paraguay">Paraguay</option><option value="peru">Peru</option><option value="philippines">Philippines</option><option value="poland">Poland</option><option value="portugal">Portugal</option><option value="qatar">Qatar</option><option value="romania">Romania</option><option value="russia">Russia</option><option value="samoa">Samoa</option><option value="saudi arabia">Saudi Arabia</option><option value="serbia">Serbia</option><option value="singapore">Singapore</option><option value="slovakia">Slovakia</option><option value="slovenia">Slovenia</option><option value="south africa">South Africa</option><option value="south korea">South Korea</option><option value="spain">Spain</option><option value="sri lanka">Sri Lanka</option><option value="sweden">Sweden</option><option value="switzerland">Switzerland</option><option value="tanzania">Tanzania</option><option value="thailand">Thailand</option><option value="turkey">Turkey</option><option value="uganda">Uganda</option><option value="uk">Uk</option><option value="ukraine">Ukraine</option><option value="united arab emirates">United Arab Emirates</option><option value="uruguay">Uruguay</option><option value="uzbekistan">Uzbekistan</option><option value="vietnam">Vietnam</option><option disabled="">─────── US States ───────</option><option value="alabama">Alabama</option><option value="alaska">Alaska</option><option value="arizona">Arizona</option><option value="arkansas">Arkansas</option><option value="california">California</option><option value="colorado">Colorado</option><option value="connecticut">Connecticut</option><option value="delaware">Delaware</option><option value="florida">Florida</option><option value="georgia">Georgia</option><option value="hawaii">Hawaii</option><option value="idaho">Idaho</option><option value="illinois">Illinois</option><option value="indiana">Indiana</option><option value="iowa">Iowa</option><option value="kansas">Kansas</option><option value="kentucky">Kentucky</option><option value="louisiana">Louisiana</option><option value="maine">Maine</option><option value="maryland">Maryland</option><option value="massachusetts">Massachusetts</option><option value="michigan">Michigan</option><option value="minnesota">Minnesota</option><option value="mississippi">Mississippi</option><option value="missouri">Missouri</option><option value="montana">Montana</option><option value="nebraska">Nebraska</option><option value="nevada">Nevada</option><option value="new hampshire">New Hampshire</option><option value="new jersey">New Jersey</option><option value="new mexico">New Mexico</option><option value="new york">New York</option><option value="north carolina">North Carolina</option><option value="north dakota">North Dakota</option><option value="ohio">Ohio</option><option value="oklahoma">Oklahoma</option><option value="oregon">Oregon</option><option value="pennsylvania">Pennsylvania</option><option value="rhode island">Rhode Island</option><option value="south carolina">South Carolina</option><option value="south dakota">South Dakota</option><option value="tennessee">Tennessee</option><option value="texas">Texas</option><option value="utah">Utah</option><option value="vermont">Vermont</option><option value="virginia">Virginia</option><option value="washington">Washington</option><option value="west virginia">West Virginia</option><option value="wisconsin">Wisconsin</option><option value="wyoming">Wyoming</option></select>
+          </div>
+        </div>
+      </div>
+      <section aria-live="polite">
+        <h2 id="displayTitle" style="margin-top: 20px;"></h2>
+        <div id="results"><h3>Business Operations - Past 24 Hours</h3><ul><li><input type="checkbox" id="greenhouse.io-Business Operations" name="greenhouse.io-Business Operations"><label for="greenhouse.io-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:greenhouse.io+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Greenhouse</a></label></li><li><input type="checkbox" id="lever.co-Business Operations" name="lever.co-Business Operations"><label for="lever.co-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:lever.co+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Lever</a></label></li><li><input type="checkbox" id="ashbyhq.com-Business Operations" name="ashbyhq.com-Business Operations"><label for="ashbyhq.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:ashbyhq.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Ashby</a></label></li><li><input type="checkbox" id="remoterocketship.com-Business Operations" name="remoterocketship.com-Business Operations"><label for="remoterocketship.com-Business Operations"><a href="https://remoterocketship.com/?ref=briansjobsearch&amp;jobTitle=Business%20Operations" target="_blank" rel="noopener noreferrer">Remote Rocketship</a></label></li><li><input type="checkbox" id="pinpointhq.com-Business Operations" name="pinpointhq.com-Business Operations"><label for="pinpointhq.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:pinpointhq.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Pinpoint</a></label></li><li><input type="checkbox" id="jobs.*-Business Operations" name="jobs.*-Business Operations"><label for="jobs.*-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:jobs.*+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Jobs Subdomain</a></label></li><li><input type="checkbox" id="careers.*-Business Operations" name="careers.*-Business Operations"><label for="careers.*-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:careers.*+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Careers Subdomain</a></label></li><li><input type="checkbox" id="people.*-Business Operations" name="people.*-Business Operations"><label for="people.*-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:people.*+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">People Subdomain</a></label></li><li><input type="checkbox" id="recruiting.paylocity.com-Business Operations" name="recruiting.paylocity.com-Business Operations"><label for="recruiting.paylocity.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:recruiting.paylocity.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Paylocity</a></label></li><li><input type="checkbox" id="keka.com-Business Operations" name="keka.com-Business Operations"><label for="keka.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:keka.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Keka</a></label></li><li><input type="checkbox" id="jobs.workable.com-Business Operations" name="jobs.workable.com-Business Operations"><label for="jobs.workable.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:jobs.workable.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Workable</a></label></li><li><input type="checkbox" id="breezy.hr-Business Operations" name="breezy.hr-Business Operations"><label for="breezy.hr-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:breezy.hr+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">BreezyHR</a></label></li><li><input type="checkbox" id="wellfound.com-Business Operations" name="wellfound.com-Business Operations"><label for="wellfound.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:wellfound.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Wellfound</a></label></li><li><input type="checkbox" id="workatastartup.com-Business Operations" name="workatastartup.com-Business Operations"><label for="workatastartup.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:workatastartup.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Y Combinator Work at a Startup</a></label></li><li><input type="checkbox" id="oraclecloud.com-Business Operations" name="oraclecloud.com-Business Operations"><label for="oraclecloud.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:oraclecloud.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Oracle Cloud</a></label></li><li><input type="checkbox" id="myworkdayjobs.com-Business Operations" name="myworkdayjobs.com-Business Operations"><label for="myworkdayjobs.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:myworkdayjobs.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Workday Jobs</a></label></li><li><input type="checkbox" id="recruitee.com-Business Operations" name="recruitee.com-Business Operations"><label for="recruitee.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:recruitee.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Recruitee</a></label></li><li><input type="checkbox" id="rippling-ats.com-Business Operations" name="rippling-ats.com-Business Operations"><label for="rippling-ats.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:rippling-ats.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Rippling</a></label></li><li><input type="checkbox" id="careerpuck.com-Business Operations" name="careerpuck.com-Business Operations"><label for="careerpuck.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:careerpuck.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">CareerPuck</a></label></li><li><input type="checkbox" id="jobs.smartrecruiters.com-Business Operations" name="jobs.smartrecruiters.com-Business Operations"><label for="jobs.smartrecruiters.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:jobs.smartrecruiters.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">SmartRecruiters</a></label></li><li><input type="checkbox" id="homerun.co-Business Operations" name="homerun.co-Business Operations"><label for="homerun.co-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:homerun.co+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Homerun</a></label></li><li><input type="checkbox" id="gem.com-Business Operations" name="gem.com-Business Operations"><label for="gem.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:gem.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Gem</a></label></li><li><input type="checkbox" id="trakstar.com-Business Operations" name="trakstar.com-Business Operations"><label for="trakstar.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:trakstar.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Trakstar</a></label></li><li><input type="checkbox" id="catsone.com-Business Operations" name="catsone.com-Business Operations"><label for="catsone.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:catsone.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Cats</a></label></li><li><input type="checkbox" id="applytojob.com-Business Operations" name="applytojob.com-Business Operations"><label for="applytojob.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:applytojob.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">JazzHR</a></label></li><li><input type="checkbox" id="jobvite.com-Business Operations" name="jobvite.com-Business Operations"><label for="jobvite.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:jobvite.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Jobvite</a></label></li><li><input type="checkbox" id="icims.com-Business Operations" name="icims.com-Business Operations"><label for="icims.com-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:icims.com+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">iCIMS</a></label></li><li><input type="checkbox" id="dover.io-Business Operations" name="dover.io-Business Operations"><label for="dover.io-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:dover.io+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Dover</a></label></li><li><input type="checkbox" id="notion.site-Business Operations" name="notion.site-Business Operations"><label for="notion.site-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:notion.site+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Notion</a></label></li><li><input type="checkbox" id="builtin.com/job/-Business Operations" name="builtin.com/job/-Business Operations"><label for="builtin.com/job/-Business Operations"><a href="https://www.google.com/search?q=&quot;Business%20Operations&quot;+site:builtin.com/job/+remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">Builtin</a></label></li><li><input type="checkbox" id="adp-Business Operations" name="adp-Business Operations"><label for="adp-Business Operations"><a href="https://www.google.com/search?q=%22Business%20Operations%22%20(site%3Aworkforcenow.adp.com%20OR%20site%3Amyjobs.adp.com)%20remote&amp;tbs=qdr:d" target="_blank" rel="noopener noreferrer">ADP</a></label></li></ul></div>
+        <p class="notice" id="resumeAd">📸 Professional business headshots at
+      
+									
+									<a href="https://www.headshotpro.com/?via=briansjobsearch" target="_blank" rel="noopener noreferrer">HeadshotPro</a></p>
+        <div id="recommendedJobLinks" style="display: none;"></div>
+      </section>
+    </main>
+    <footer> Created by <a href="https://www.linkedin.com/posts/activity-7150614720696258560-35iQ" target="_blank">Brian Batt</a> - Copyright 2024-2025 <p>Find more jobs at <a href="https://remoterocketship.com/?ref=briansjobsearch" target="_blank">Remote Rocketship</a> 🚀 </p>
+      <p>
+        <a href="#" id="advancedLink">Advanced Search</a>
+      </p>
+    </footer>
+    <img id="analyticsTracker" src="https://queue.simpleanalyticscdn.com/noscript.gif?timezone=Europe%2FAmsterdam&amp;unique=0.7322716550978499" referrerpolicy="no-referrer-when-downgrade" alt="" width="1" height="1">
+  
+
+</body></html>
 <main>
       <h1>Fresh Jobs</h1>
       <div id="searchForm">
@@ -46,3 +1817,1763 @@
         <div id="recommendedJobLinks" style="display: none;"></div>
       </section>
     </main>
+<html lang="en"><head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="impact-site-verification" value="5680b643-7f7f-46e6-b4c5-38c209981af7">
+    <meta name="description" content="Discover your next job with Brian's Job Search. Optimized for Google, this is a user-friendly and efficient way to explore a wide range of career opportunities. Start your journey towards a fulfilling job today!">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Brian's Job Search</title>
+    <style>
+      ::backdrop,
+      :root {
+        --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+        --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        --standard-border-radius: 5px;
+        --bg: #f4f4f4;
+        --accent-bg: #f5f7ff;
+        --text: #212121;
+        --text-light: #585858;
+        --border: #898EA4;
+        --accent: #0d47a1;
+        --accent-text: var(--bg);
+        --code: #d81b60;
+        --preformatted: #444;
+        --marked: #ffdd33;
+        --disabled: #efefef;
+        --linktext: #0000EE;
+        --visitedlink: #0000EE;
+        --resultsbg: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+
+        ::backdrop,
+        :root {
+          color-scheme: dark;
+          --bg: #000;
+          --accent-bg: #2b2b2b;
+          --text: #fff;
+          --text-light: #fff;
+          --accent: #ffb300;
+          --accent-text: var(--bg);
+          --code: #f06292;
+          --preformatted: #ccc;
+          --disabled: #efefef;
+          --linktext: #8ab4f8;
+          --visitedlink: #8ab4f8;
+          --resultsbg: #000;
+        }
+
+        img,
+        video {
+          opacity: .8
+        }
+      }
+
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box
+      }
+
+      input,
+      progress,
+      select,
+      textarea {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      html {
+        font-family: var(--sans-font);
+        scroll-behavior: smooth
+      }
+
+      body {
+        color: var(--text);
+        background-color: var(--bg);
+        font-size: 1.15rem;
+        line-height: 1.5;
+        display: grid;
+        grid-template-columns: 1fr min(45rem, 90%) 1fr;
+        margin: 0
+      }
+
+      body>* {
+        grid-column: 2
+      }
+
+      body>header {
+        background-color: var(--accent-bg);
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        padding: 0 .5rem 2rem .5rem;
+        grid-column: 1/-1
+      }
+
+      body>header>:only-child {
+        margin-block-start: 2rem
+      }
+
+      body>header h1 {
+        max-width: 1200px;
+        margin: 1rem auto
+      }
+
+      body>header p {
+        max-width: 40rem;
+        margin: 1rem auto
+      }
+
+      main {
+        padding-top: 0
+      }
+
+      body>footer {
+        margin-top: 4rem;
+        padding: 2rem 1rem 1.5rem 1rem;
+        font-size: .9rem;
+        text-align: center;
+        border-top: 1px solid var(--text)
+      }
+
+      h1 {
+        font-size: 3rem
+      }
+
+      h2 {
+        font-size: 2.6rem;
+        margin-top: 3rem
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-top: 3rem
+      }
+
+      h4 {
+        font-size: 1.44rem
+      }
+
+      h5 {
+        font-size: 1.15rem
+      }
+
+      h6 {
+        font-size: .96rem
+      }
+
+      p {
+        margin: 1.5rem 0
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        overflow-wrap: break-word
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.1
+      }
+
+      @media only screen and (max-width:720px) {
+        h1 {
+          font-size: 2.5rem
+        }
+
+        h2 {
+          font-size: 2.1rem
+        }
+
+        h3 {
+          font-size: 1.75rem
+        }
+
+        h4 {
+          font-size: 1.25rem
+        }
+      }
+
+      a,
+      a:visited {}
+
+      a:hover {
+        text-decoration: none
+      }
+
+      .button,
+      a.button,
+      button,
+      input[type=button],
+      input[type=reset],
+      input[type=submit],
+      label[type=button] {
+        border: 1px solid var(--accent);
+        background-color: var(--accent);
+        color: var(--accent-text);
+        padding: .5rem .9rem;
+        text-decoration: none;
+        line-height: normal
+      }
+
+      .button[aria-disabled=true],
+      button[disabled],
+      input:disabled,
+      select:disabled,
+      textarea:disabled {
+        cursor: not-allowed;
+        background-color: var(--disabled);
+        border-color: var(--disabled);
+        color: var(--text-light)
+      }
+
+      input[type=range] {
+        padding: 0
+      }
+
+      abbr[title] {
+        cursor: help;
+        text-decoration-line: underline;
+        text-decoration-style: dotted
+      }
+
+      .button:not([aria-disabled=true]):hover,
+      button:enabled:hover,
+      input[type=button]:enabled:hover,
+      input[type=reset]:enabled:hover,
+      input[type=submit]:enabled:hover,
+      label[type=button]:hover {
+        filter: brightness(1.4);
+        cursor: pointer
+      }
+
+      .button:focus-visible,
+      button:focus-visible:where(:enabled),
+      input:enabled:focus-visible:where([type=submit], [type=reset], [type=button]) {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px
+      }
+
+      header>nav {
+        font-size: 1rem;
+        line-height: 2;
+        padding: 1rem 0 0 0
+      }
+
+      header>nav ol,
+      header>nav ul {
+        align-content: space-around;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0
+      }
+
+      header>nav ol li,
+      header>nav ul li {
+        display: inline-block
+      }
+
+      header>nav a,
+      header>nav a:visited {
+        margin: 0 .5rem 1rem .5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--standard-border-radius);
+        color: var(--text);
+        display: inline-block;
+        padding: .1rem 1rem;
+        text-decoration: none
+      }
+
+      header>nav a.current,
+      header>nav a:hover,
+      header>nav a[aria-current=page] {
+        border-color: var(--accent);
+        color: var(--accent);
+        cursor: pointer
+      }
+
+      @media only screen and (max-width:720px) {
+        header>nav a {
+          border: none;
+          padding: 0;
+          text-decoration: underline;
+          line-height: 1
+        }
+      }
+
+      aside,
+      details,
+      pre,
+      progress {
+        background-color: var(--accent-bg);
+        border: 1px solid var(--border);
+        border-radius: var(--standard-border-radius);
+        margin-bottom: 1rem
+      }
+
+      aside {
+        font-size: 1rem;
+        width: 30%;
+        padding: 0 15px;
+        margin-inline-start: 15px;
+        float: right
+      }
+
+      [dir=rtl] aside {
+        float: left
+      }
+
+      @media only screen and (max-width:720px) {
+        aside {
+          width: 100%;
+          float: none;
+          margin-inline-start: 0
+        }
+      }
+
+      article,
+      dialog,
+      fieldset {
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: var(--standard-border-radius);
+        margin-bottom: 1rem
+      }
+
+      article h2:first-child,
+      section h2:first-child {
+        margin-top: 1rem
+      }
+
+      section {
+        border-top: 1px solid var(--text);
+        border-bottom: 1px solid var(--border);
+        padding: 2rem 1rem;
+        padding-top: 0;
+        margin: 3rem 0
+      }
+
+      section+section,
+      section:first-child {
+        border-top: 0;
+        padding-top: 0
+      }
+
+      section:last-child {
+        border-bottom: 0;
+        padding-bottom: 0
+      }
+
+      details {
+        padding: .7rem 1rem
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        padding: .7rem 1rem;
+        margin: -.7rem -1rem;
+        word-break: break-all
+      }
+
+      details[open]>summary+* {
+        margin-top: 0
+      }
+
+      details[open]>summary {
+        margin-bottom: .5rem
+      }
+
+      details[open]>:last-child {
+        margin-bottom: 0
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 1.5rem 0
+      }
+
+      td,
+      th {
+        border: 1px solid var(--border);
+        text-align: start;
+        padding: .5rem
+      }
+
+      th {
+        background-color: var(--accent-bg);
+        font-weight: 700
+      }
+
+      tr:nth-child(even) {
+        background-color: var(--accent-bg)
+      }
+
+      table caption {
+        font-weight: 700;
+        margin-bottom: .5rem
+      }
+
+      .button,
+      button,
+      input,
+      select,
+      textarea {
+        font-size: inherit;
+        font-family: inherit;
+        padding: .5rem;
+        margin-bottom: .5rem;
+        border-radius: var(--standard-border-radius);
+        box-shadow: none;
+        max-width: 100%;
+        display: inline-block
+      }
+
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background-color: var(--resultsbg);
+        border: 1px solid var(--border)
+      }
+
+      label {
+        display: block
+      }
+
+      textarea:not([cols]) {
+        width: 100%
+      }
+
+      select:not([multiple]) {
+        background-image: linear-gradient(45deg, transparent 49%, var(--text) 51%), linear-gradient(135deg, var(--text) 51%, transparent 49%);
+        background-position: calc(100% - 15px), calc(100% - 10px);
+        background-size: 5px 5px, 5px 5px;
+        background-repeat: no-repeat;
+        padding-inline-end: 25px
+      }
+
+      [dir=rtl] select:not([multiple]) {
+        background-position: 10px, 15px
+      }
+
+      input[type=checkbox],
+      input[type=radio] {
+        vertical-align: middle;
+        position: relative;
+        width: min-content;
+        background-color: var(--text);
+      }
+
+      input[type=checkbox]+label,
+      input[type=radio]+label {
+        display: inline-block
+      }
+
+      input[type=radio] {
+        border-radius: 100%
+      }
+
+      input[type=checkbox]:checked,
+      input[type=radio]:checked {
+        background-color: var(--text);
+      }
+
+      input[type=checkbox]:checked::after {
+        content: " ";
+        width: .18em;
+        height: .32em;
+        border-radius: 0;
+        position: absolute;
+        top: .05em;
+        left: .17em;
+        background-color: transparent;
+        border-right: solid var(--bg) .08em;
+        border-bottom: solid var(--bg) .08em;
+        font-size: 1.8em;
+        transform: rotate(45deg)
+      }
+
+      input[type=radio]:checked::after {
+        content: " ";
+        width: .25em;
+        height: .25em;
+        border-radius: 100%;
+        position: absolute;
+        top: .125em;
+        background-color: var(--bg);
+        left: .125em;
+        font-size: 32px
+      }
+
+      @media only screen and (max-width:720px) {
+
+        input,
+        select,
+        textarea {
+          width: 100%
+        }
+      }
+
+      input[type=color] {
+        height: 2.5rem;
+        padding: .2rem
+      }
+
+      input[type=file] {
+        border: 0
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: var(--border);
+        margin: 1rem auto
+      }
+
+      mark {
+        padding: 2px 5px;
+        border-radius: var(--standard-border-radius);
+        background-color: var(--marked);
+        color: #000
+      }
+
+      mark a {
+        color: #0d47a1
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--standard-border-radius)
+      }
+
+      figure {
+        margin: 0;
+        display: block;
+        overflow-x: auto
+      }
+
+      figcaption {
+        text-align: center;
+        font-size: .9rem;
+        color: var(--text-light);
+        margin-bottom: 1rem
+      }
+
+      blockquote {
+        margin-inline-start: 2rem;
+        margin-inline-end: 0;
+        margin-block: 2rem;
+        padding: .4rem .8rem;
+        border-inline-start: .35rem solid var(--accent);
+        color: var(--text-light);
+        font-style: italic
+      }
+
+      cite {
+        font-size: .9rem;
+        color: var(--text-light);
+        font-style: normal
+      }
+
+      dt {
+        color: var(--text-light)
+      }
+
+      code,
+      kbd,
+      pre,
+      pre span,
+      samp {
+        font-family: var(--mono-font);
+        color: var(--code)
+      }
+
+      kbd {
+        color: var(--preformatted);
+        border: 1px solid var(--preformatted);
+        border-bottom: 3px solid var(--preformatted);
+        border-radius: var(--standard-border-radius);
+        padding: .1rem .4rem
+      }
+
+      pre {
+        padding: 1rem 1.4rem;
+        max-width: 100%;
+        overflow: auto;
+        color: var(--preformatted)
+      }
+
+      pre code {
+        color: var(--preformatted);
+        background: 0 0;
+        margin: 0;
+        padding: 0
+      }
+
+      progress {
+        width: 100%
+      }
+
+      progress:indeterminate {
+        background-color: var(--accent-bg)
+      }
+
+      progress::-webkit-progress-bar {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent-bg)
+      }
+
+      progress::-webkit-progress-value {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent)
+      }
+
+      progress::-moz-progress-bar {
+        border-radius: var(--standard-border-radius);
+        background-color: var(--accent);
+        transition-property: width;
+        transition-duration: .3s
+      }
+
+      progress:indeterminate::-moz-progress-bar {
+        background-color: var(--accent-bg)
+      }
+
+      dialog {
+        max-width: 40rem;
+        margin: auto
+      }
+
+      dialog::backdrop {
+        background-color: var(--bg);
+        opacity: .8
+      }
+
+      @media only screen and (max-width:720px) {
+        dialog {
+          max-width: 100%;
+          margin: auto 1em
+        }
+      }
+
+      sub,
+      sup {
+        vertical-align: baseline;
+        position: relative
+      }
+
+      sup {
+        top: -.4em
+      }
+
+      sub {
+        top: .3em
+      }
+
+      .notice {
+        background: var(--resultsbg);
+        border: 2px solid var(--text);
+        border-radius: var(--standard-border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        line-height: 1.6;
+      }
+
+      /* General Body Styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--bg);
+        margin: 0;
+        padding: 20px;
+        color: var(--text);
+        text-align: center;
+        /* Center text for the whole page */
+      }
+
+      .container {
+        /* ... [Container styles] ... */
+        text-align: left;
+        /* Align text to the left inside the container */
+      }
+
+      h1,
+      footer {
+        text-align: center;
+        /* Center align specific elements */
+      }
+
+      h2 {
+        text-align: left;
+        /* Center align specific elements */
+      }
+
+      #results ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+        /* Ensure results are left-aligned */
+      }
+
+      #results li {
+        background-color: var(--resultsbg);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        text-align: left;
+        /* Ensure each result item is left-aligned */
+      }
+
+      /* Form Elements Styling */
+      input[type="text"],
+      select {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid var(--text);
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: var(--text);
+      }
+
+      /* Button Styling */
+      button {
+        background-color: var(--text);
+        /* A darker shade of blue */
+        color: var(--resultsbg);
+        padding: 10px 20px;
+        border: 1px solid var(--text);
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+
+      button:hover {
+        background-color: var(--resultsbg);
+        color: var(--text);
+        /* An even darker shade for hover state */
+      }
+
+      /* Results List Styling */
+      #results ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #results li {
+        background-color: var(--resultsbg);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+
+      #results li label {
+        margin-left: 10px;
+      }
+
+      /* Link Styling */
+      a {
+        text-decoration: none;
+        color: var(--linktext);
+        visited: var(--visitedlink);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        /* added for robustness */
+        border-width: 0;
+      }
+
+      /* Sticky Footer Styles */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      .wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      ::placeholder {
+        color: var(--text);
+      }
+
+      footer {
+        background-color: var(--bg);
+        /* Or your chosen footer background color */
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+
+      footer a {
+        color: var(--text);
+        /* Change to a darker color for higher contrast */
+        text-decoration: underline;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        /* Optional: for better visibility when hovered */
+      }
+
+      /* NEW OVERRIDE CLASSES: dark-mode & light-mode */
+      :root.light-mode {
+        color-scheme: light !important;
+        --bg: #f4f4f4 !important;
+        --accent-bg: #f5f7ff !important;
+        --text: #212121 !important;
+        --text-light: #585858 !important;
+        --accent: #0d47a1 !important;
+        --accent-text: var(--bg) !important;
+        --code: #d81b60 !important;
+        --preformatted: #444 !important;
+        --marked: #ffdd33 !important;
+        --disabled: #efefef !important;
+        --linktext: #0000EE !important;
+        --visitedlink: #0000EE !important;
+        --resultsbg: #fff !important;
+      }
+
+      :root.dark-mode {
+        color-scheme: dark !important;
+        --bg: #000 !important;
+        --accent-bg: #2b2b2b !important;
+        --text: #fff !important;
+        --text-light: #fff !important;
+        --accent: #ffb300 !important;
+        --accent-text: var(--bg) !important;
+        --code: #f06292 !important;
+        --preformatted: #ccc !important;
+        --disabled: #efefef !important;
+        --linktext: #8ab4f8 !important;
+        --visitedlink: #8ab4f8 !important;
+        --resultsbg: #000 !important;
+      }
+
+      /* Advanced search options styling */
+      #advancedOptions {
+        display: none;
+        background-color: var(--accent-bg);
+        padding: 15px;
+        border-radius: var(--standard-border-radius);
+        margin: 15px 0;
+        text-align: left;
+      }
+
+      .option-group {
+        margin-bottom: 10px;
+      }
+
+      .option-group label {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--disabled);
+        transition: .4s;
+        border-radius: 24px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--resultsbg);
+        transition: .4s;
+        border-radius: 50%;
+      }
+
+      input:checked+.slider {
+        background-color: var(--text);
+      }
+
+      input:checked+.slider:before {
+        transform: translateX(26px);
+      }
+
+      #locationSelect {
+        max-width: 250px;
+      }
+
+      @media only screen and (max-width:720px) {
+        #advancedOptions {
+          padding: 10px;
+        }
+
+        .option-group {
+          margin-bottom: 15px;
+        }
+
+        #locationSelect {
+          max-width: 100%;
+        }
+      }
+
+      /* Show/hide the advanced time options */
+      #timeFilter option[value="1hour"],
+      #timeFilter option[value="4hours"],
+      #timeFilter option[value="8hours"],
+      #timeFilter option[value="12hours"] {
+        display: none;
+      }
+
+      .show-all-times #timeFilter option[value="1hour"],
+      .show-all-times #timeFilter option[value="4hours"],
+      .show-all-times #timeFilter option[value="8hours"],
+      .show-all-times #timeFilter option[value="12hours"] {
+        display: block;
+      }
+    </style>
+    <script>
+      function generateRecommendedJobLinks(jobTitle) {
+        const recommendedJobs = getRelatedTitles(jobTitle);
+        const recommendedJobLinksDiv = document.getElementById('recommendedJobLinks');
+        recommendedJobLinksDiv.innerHTML = '';
+        // Only add the "Try:" text and links if there are recommended jobs
+        if (recommendedJobs.length > 0) {
+          const tryText = document.createElement('span');
+          tryText.textContent = 'Try: ';
+          recommendedJobLinksDiv.appendChild(tryText);
+          recommendedJobs.forEach(recommendedJob => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.textContent = recommendedJob;
+            link.onclick = function() {
+              updateSearchAndURL(recommendedJob);
+              window.scrollTo(0, 0);
+              return false; // Prevent default link behavior
+            };
+            recommendedJobLinksDiv.appendChild(link);
+            recommendedJobLinksDiv.appendChild(document.createTextNode(' | ')); // Separator
+          });
+          // Remove the last separator
+          if (recommendedJobs.length > 0) {
+            recommendedJobLinksDiv.lastChild.remove();
+          }
+        }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        populateLocations();
+        document.getElementById("jobTitle").addEventListener('keypress', function(event) {
+          if (event.key === 'Enter') {
+            generateList();
+          }
+        });
+        // Handle advanced options toggling
+        document.getElementById("excludeRemote").addEventListener('change', function() {
+          if (document.getElementById("jobTitle").value.trim() !== "") {
+            generateList();
+          }
+        });
+        document.getElementById("locationSelect").addEventListener('change', function() {
+          if (document.getElementById("jobTitle").value.trim() !== "") {
+            generateList();
+          }
+        });
+        document.getElementById("advancedLink").addEventListener('click', function(event) {
+          event.preventDefault();
+          const advancedOptions = document.getElementById("advancedOptions");
+          if (advancedOptions.style.display === "none" || !advancedOptions.style.display) {
+            advancedOptions.style.display = "block";
+            this.textContent = "Simple Search";
+            document.body.classList.add('show-all-times');
+          } else {
+            advancedOptions.style.display = "none";
+            this.textContent = "Advanced Search";
+            document.body.classList.remove('show-all-times');
+            // Reset advanced options
+            document.getElementById("excludeRemote").checked = false;
+            document.getElementById("locationSelect").value = "";
+            // Remove advanced parameters from the URL
+            var queryParams = new URLSearchParams(window.location.search);
+            queryParams.delete("remote");
+            queryParams.delete("location");
+            history.pushState(null, null, "?" + queryParams.toString());
+            // Regenerate results
+            if (document.getElementById("jobTitle").value.trim() !== "") {
+              generateList();
+            }
+          }
+          window.scrollTo(0, 0);
+        });
+        // 2) Now parse URL parameters
+        const queryParams = new URLSearchParams(window.location.search);
+        const jobParam = queryParams.get('job');
+        const timeParam = queryParams.get('time');
+        const remoteParam = queryParams.get('remote');
+        const locationParam = queryParams.get('location');
+        if (jobParam) {
+          document.getElementById("jobTitle").value = decodeURIComponent(jobParam.replace(/\+/g, ' '));
+          if (timeParam) {
+            document.getElementById("timeFilter").value = timeParam;
+          }
+          // Set advanced options if they exist
+          if (remoteParam === 'false') {
+            document.getElementById("excludeRemote").checked = true;
+          }
+          if (locationParam) {
+            document.getElementById("advancedOptions").style.display = "block";
+            document.getElementById("advancedLink").textContent = "Simple Search";
+            document.body.classList.add('show-all-times');
+            document.getElementById("locationSelect").value = locationParam;
+          }
+          // Finally, generate the listings
+          generateList();
+        }
+        // Recommended job links (if any)
+        generateRecommendedJobLinks();
+        // 3) Override light/dark mode if ?mode= was specified
+        const mode = queryParams.get('mode');
+        if (mode === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        } else if (mode === 'light') {
+          document.documentElement.classList.add('light-mode');
+        }
+        const resumeAds = [{
+          copy: '📸 Professional business headshots at',
+          linktext: 'HeadshotPro',
+          url: 'https://www.headshotpro.com/?via=briansjobsearch'
+        }, {
+          copy: '🔥 Outsmart the ATS, stop automatic rejections with',
+          linktext: 'Jobscan',
+          url: 'https://jobscanco.pxf.io/briansjobsearch'
+        }, {
+          copy: '🤖 Job Application Tracker, AI Resume Builder, and Checker at',
+          linktext: 'Huntr',
+          url: 'https://huntr.co/?via=briansjobsearch'
+        }, {
+          copy: '🚀 Find more remote jobs at',
+          linktext: 'Remote Rocketship',
+          url: 'https://remoterocketship.com/?ref=briansjobsearch'
+        }];
+        const randomAd = resumeAds[Math.floor(Math.random() * resumeAds.length)];
+        const resumeAdEl = document.getElementById('resumeAd');
+        resumeAdEl.innerHTML = `${randomAd.copy}
+      
+									
+									<a href="${randomAd.url}" target="_blank" rel="noopener noreferrer">${randomAd.linktext}</a>`;
+      });
+
+      function populateLocations() {
+        const locationSelect = document.getElementById("locationSelect");
+        // Define countryQueries
+        var countryQueries = {
+          "canada": "+canada",
+          "usa": "+usa",
+          "uk": "+uk",
+          "germany": "+germany",
+          "france": "+france",
+          "australia": "+australia",
+          "brazil": "+brazil",
+          "china": "+china",
+          "russia": "+russia",
+          "india": "+india",
+          "japan": "+japan",
+          "south korea": "+south korea",
+          "mexico": "+mexico",
+          "italy": "+italy",
+          "spain": "+spain",
+          "netherlands": "+netherlands",
+          "sweden": "+sweden",
+          "norway": "+norway",
+          "denmark": "+denmark",
+          "finland": "+finland",
+          "poland": "+poland",
+          "ireland": "+ireland",
+          "belgium": "+belgium",
+          "switzerland": "+switzerland",
+          "new zealand": "+new zealand",
+          "argentina": "+argentina",
+          "chile": "+chile",
+          "south africa": "+south africa",
+          "egypt": "+egypt",
+          "saudi arabia": "+saudi arabia",
+          "turkey": "+turkey",
+          "greece": "+greece",
+          "portugal": "+portugal",
+          "austria": "+austria",
+          "hungary": "+hungary",
+          "czech republic": "+czech republic",
+          "slovakia": "+slovakia",
+          "romania": "+romania",
+          "bulgaria": "+bulgaria",
+          "croatia": "+croatia",
+          "serbia": "+serbia",
+          "malaysia": "+malaysia",
+          "singapore": "+singapore",
+          "indonesia": "+indonesia",
+          "philippines": "+philippines",
+          "vietnam": "+vietnam",
+          "thailand": "+thailand",
+          "israel": "+israel",
+          "united arab emirates": "+united arab emirates",
+          "qatar": "+qatar",
+          "kuwait": "+kuwait",
+          "nigeria": "+nigeria",
+          "kenya": "+kenya",
+          "ghana": "+ghana",
+          "morocco": "+morocco",
+          "estonia": "+estonia",
+          "lithuania": "+lithuania",
+          "latvia": "+latvia",
+          "slovenia": "+slovenia",
+          "luxembourg": "+luxembourg",
+          "ukraine": "+ukraine",
+          "united states": "+usa",
+          "united states of america": "+usa",
+          "usa": "+usa",
+          "pakistan": "+pakistan",
+          "bangladesh": "+bangladesh",
+          "sri lanka": "+sri lanka",
+          "kazakhstan": "+kazakhstan",
+          "uzbekistan": "+uzbekistan",
+          "ethiopia": "+ethiopia",
+          "tanzania": "+tanzania",
+          "uganda": "+uganda",
+          "ivory coast": "+ivory coast",
+          "algeria": "+algeria",
+          "oman": "+oman",
+          "bahrain": "+bahrain",
+          "jordan": "+jordan",
+          "lebanon": "+lebanon",
+          "jamaica": "+jamaica",
+          "dominican republic": "+dominican republic",
+          "cuba": "+cuba",
+          "colombia": "+colombia",
+          "peru": "+peru",
+          "ecuador": "+ecuador",
+          "uruguay": "+uruguay",
+          "paraguay": "+paraguay",
+          "fiji": "+fiji",
+          "papua new guinea": "+papua new guinea",
+          "samoa": "+samoa",
+          "armenia": "+armenia",
+          "azerbaijan": "+azerbaijan",
+          "alabama": "+alabama",
+          "alaska": "+alaska",
+          "arizona": "+arizona",
+          "arkansas": "+arkansas",
+          "california": "+california",
+          "colorado": "+colorado",
+          "connecticut": "+connecticut",
+          "delaware": "+delaware",
+          "florida": "+florida",
+          "georgia": "+georgia",
+          "hawaii": "+hawaii",
+          "idaho": "+idaho",
+          "illinois": "+illinois",
+          "indiana": "+indiana",
+          "iowa": "+iowa",
+          "kansas": "+kansas",
+          "kentucky": "+kentucky",
+          "louisiana": "+louisiana",
+          "maine": "+maine",
+          "maryland": "+maryland",
+          "massachusetts": "+massachusetts",
+          "michigan": "+michigan",
+          "minnesota": "+minnesota",
+          "mississippi": "+mississippi",
+          "missouri": "+missouri",
+          "montana": "+montana",
+          "nebraska": "+nebraska",
+          "nevada": "+nevada",
+          "new hampshire": "+new hampshire",
+          "new jersey": "+new jersey",
+          "new mexico": "+new mexico",
+          "new york": "+new york",
+          "north carolina": "+north carolina",
+          "north dakota": "+north dakota",
+          "ohio": "+ohio",
+          "oklahoma": "+oklahoma",
+          "oregon": "+oregon",
+          "pennsylvania": "+pennsylvania",
+          "rhode island": "+rhode island",
+          "south carolina": "+south carolina",
+          "south dakota": "+south dakota",
+          "tennessee": "+tennessee",
+          "texas": "+texas",
+          "utah": "+utah",
+          "vermont": "+vermont",
+          "virginia": "+virginia",
+          "washington": "+washington",
+          "west virginia": "+west virginia",
+          "wisconsin": "+wisconsin",
+          "wyoming": "+wyoming"
+        };
+        // Store this in the window object so other functions can access it
+        window.countryQueries = countryQueries;
+        // Clear existing options
+        locationSelect.innerHTML = '';
+        // Add "All Locations" option first
+        const defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.textContent = "All Locations";
+        locationSelect.appendChild(defaultOption);
+        // Add USA next
+        const usaOption = document.createElement('option');
+        usaOption.value = "usa";
+        usaOption.textContent = "United States";
+        locationSelect.appendChild(usaOption);
+        // Separate countries and states
+        const countries = [];
+        const states = [];
+        Object.keys(countryQueries).forEach(key => {
+          // Skip duplicate USA entries (already added above)
+          if (key === "united states" || key === "united states of america" || key === "usa") {
+            return;
+          }
+          // Check if it's a US state
+          const usStates = ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey", "new mexico", "new york", "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming"];
+          if (usStates.includes(key)) {
+            states.push(key);
+          } else {
+            countries.push(key);
+          }
+        });
+        // Sort countries alphabetically
+        countries.sort();
+        // Sort states alphabetically
+        states.sort();
+        // Add countries
+        countries.forEach(country => {
+          const option = document.createElement('option');
+          option.value = country;
+          option.textContent = country.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+          locationSelect.appendChild(option);
+        });
+        // Add a divider
+        const dividerOption = document.createElement('option');
+        dividerOption.disabled = true;
+        dividerOption.textContent = "─────── US States ───────";
+        locationSelect.appendChild(dividerOption);
+        // Add states
+        states.forEach(state => {
+          const option = document.createElement('option');
+          option.value = state;
+          option.textContent = state.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+          locationSelect.appendChild(option);
+        });
+      }
+
+      function reloadAnalyticsTracker() {
+        const tracker = document.getElementById("analyticsTracker");
+        if (tracker) {
+          const baseUrl = "https://queue.simpleanalyticscdn.com/noscript.gif";
+          const params = new URLSearchParams({
+            timezone: "Europe/Amsterdam",
+            unique: Math.random().toString(), // Use a random number to bypass cache
+          });
+          tracker.src = `${baseUrl}?${params.toString()}`;
+        }
+      }
+
+      function updateSearchAndURL(jobTitle) {
+        // Update the job title in the search bar
+        document.getElementById("jobTitle").value = jobTitle;
+        // Get all search parameters
+        const timeFilter = document.getElementById("timeFilter").value;
+        const excludeRemote = document.getElementById("excludeRemote").checked;
+        const location = document.getElementById("locationSelect").value;
+        // Update the URL with all parameters
+        var queryParams = new URLSearchParams(window.location.search);
+        queryParams.set("job", encodeURIComponent(jobTitle));
+        queryParams.set("time", timeFilter);
+        // Add advanced parameters if they're set
+        if (excludeRemote) {
+          queryParams.set("remote", "false");
+        } else {
+          queryParams.delete("remote");
+        }
+        if (location) {
+          queryParams.set("location", location);
+        } else {
+          queryParams.delete("location");
+        }
+        const mode = queryParams.get("mode");
+        if (mode) {
+          queryParams.set("mode", mode);
+        }
+        history.pushState(null, null, "?" + queryParams.toString());
+        reloadAnalyticsTracker();
+        // After updating the URL, generate the job list again
+        generateList();
+      }
+
+      function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
+
+      function updateURL(jobTitles, timeFilter) {
+        var queryParams = new URLSearchParams(window.location.search);
+        queryParams.set("job", jobTitles.join(","));
+        queryParams.set("time", timeFilter);
+        // Add advanced parameters
+        const excludeRemote = document.getElementById("excludeRemote").checked;
+        const location = document.getElementById("locationSelect").value;
+        if (excludeRemote) {
+          queryParams.set("remote", "false");
+        } else {
+          queryParams.delete("remote");
+        }
+        if (location) {
+          queryParams.set("location", location);
+        } else {
+          queryParams.delete("location");
+        }
+        // Optionally, add other UTM parameters
+        queryParams.set("campaign", jobTitles.join(","));
+        history.pushState(null, null, "?" + queryParams.toString());
+        reloadAnalyticsTracker();
+      }
+      const jobGroups = {
+        media: ['Video Producer', 'Film Editor', 'Content Producer', 'Content Creator', 'Media Manager', 'Digital Marketing Specialist', 'Multimedia Designer', 'Social Media Strategist', 'Brand Content Manager', 'Video Production Coordinator', 'Creative Director'],
+        qas: ['Qa Engineer', 'Software Tester', 'Automation Engineer', 'Test Analyst', 'Quality Assurance Specialist', 'Test Engineer', 'Qa', 'Sdet', 'Software Development Engineer In Test', 'Test Engineer', 'Release Manager', 'Quality Assurance', 'Software Quality Assurance'],
+        softwareDev: ['Software Engineer', 'Developer', 'Systems Engineer', 'Application Developer', 'Software Architect', 'Full Stack Developer', 'Frontend', 'Engineering Manager', 'React'],
+        projectManagement: ['Project Manager', 'Program Manager', 'Operations Manager', 'Team Lead', 'Project Coordinator'],
+        productManagement: ['Product Manager', 'Product Owner', 'Program Manager', 'Innovation Manager', 'Technical Product Manager', 'Digital Product Manager'],
+        salesforce: ['Salesforce Administrator', 'Salesforce Developer', 'Salesforce Consultant', 'Salesforce Business Analyst', 'Database Administrator', 'IT Systems Administrator'],
+        data: ['Data Analyst', 'Business Intelligence Analyst', 'Data Scientist', 'Power Bi', 'Python', 'Data Engineer', 'Data', 'Business Analyst'],
+        scrumMaster: ['Scrum Master', 'Agile Coach', 'Lean Practioner', 'Kanban Coach', 'Agile Project Facilitator', 'Agile Transformation Lead', 'Agile Team Coach', 'Iteration Manager', 'Scrum']
+      };
+
+      function getRelatedTitles(jobTitle) {
+        for (const group in jobGroups) {
+          if (jobGroups[group].includes(jobTitle)) {
+            return jobGroups[group].filter(title => title !== jobTitle);
+          }
+        }
+        return []; // Return an empty array if the job title is not found
+      }
+
+      function generateList() {
+        var jobTitleInput = document.getElementById("jobTitle").value;
+        var jobTitles = jobTitleInput.split(',').map(function(title) {
+          return toTitleCase(title.trim());
+        });
+        var matchedJobTitle = jobTitles.find(title => Object.keys(jobGroups).some(group => jobGroups[group].includes(title)));
+        if (matchedJobTitle) {
+          document.getElementById("recommendedJobLinks").style.display = "block";
+          generateRecommendedJobLinks(matchedJobTitle);
+        } else {
+          document.getElementById("recommendedJobLinks").style.display = "none";
+        }
+        var timeFilter = document.getElementById("timeFilter").value;
+        var resultsDiv = document.getElementById("results");
+        var displayTitle = document.getElementById("displayTitle");
+        // Get advanced options
+        var excludeRemote = document.getElementById("excludeRemote").checked;
+        var selectedLocation = document.getElementById("locationSelect").value;
+        var timeQueryParam = '';
+        var formattedTimeFilter = '';
+        switch (timeFilter) {
+          case '24hours':
+            formattedTimeFilter = 'Past 24 Hours';
+            timeQueryParam = '&tbs=qdr:d';
+            break;
+          case '48hours':
+            formattedTimeFilter = 'Past 48 Hours';
+            timeQueryParam = '&tbs=qdr:h48';
+            break;
+          case '72hours':
+            formattedTimeFilter = 'Past 72 Hours';
+            timeQueryParam = '&tbs=qdr:h72';
+            break;
+          case '1hour':
+            formattedTimeFilter = 'Past Hour';
+            timeQueryParam = '&tbs=qdr:h1';
+            break;
+          case '4hours':
+            formattedTimeFilter = 'Past 4 Hours';
+            timeQueryParam = '&tbs=qdr:h4';
+            break;
+          case '8hours':
+            formattedTimeFilter = 'Past 8 Hours';
+            timeQueryParam = '&tbs=qdr:h8';
+            break;
+          case '12hours':
+            formattedTimeFilter = 'Past 12 Hours';
+            timeQueryParam = '&tbs=qdr:h12';
+            break;
+          case 'week':
+            formattedTimeFilter = 'Past Week';
+            timeQueryParam = '&tbs=qdr:w';
+            break;
+          case 'month':
+            formattedTimeFilter = 'Past Month';
+            timeQueryParam = '&tbs=qdr:m';
+            break;
+          default:
+            formattedTimeFilter = 'All';
+        }
+        resultsDiv.innerHTML = '';
+        var sites = {
+          "greenhouse.io": "Greenhouse",
+          "lever.co": "Lever",
+          "ashbyhq.com": "Ashby",
+          "remoterocketship.com": "Remote Rocketship",
+          "pinpointhq.com": "Pinpoint",
+          // "remotive.com": "Remotive",
+          "jobs.*": "Jobs Subdomain",
+          "careers.*": "Careers Subdomain",
+          "people.*": "People Subdomain",
+          "recruiting.paylocity.com": "Paylocity",
+          "keka.com": "Keka",
+          "jobs.workable.com": "Workable",
+          "breezy.hr": "BreezyHR",
+          "wellfound.com": "Wellfound",
+          "workatastartup.com": "Y Combinator Work at a Startup",
+          "oraclecloud.com": "Oracle Cloud",
+          "myworkdayjobs.com": "Workday Jobs",
+          "recruitee.com": "Recruitee",
+          "rippling-ats.com": "Rippling",
+          "careerpuck.com": "CareerPuck",
+          "jobs.smartrecruiters.com": "SmartRecruiters",
+          "homerun.co": "Homerun",
+          "gem.com": "Gem",
+          "trakstar.com": "Trakstar",
+          "catsone.com": "Cats",
+          "applytojob.com": "JazzHR",
+          "jobvite.com": "Jobvite",
+          "icims.com": "iCIMS",
+          "dover.io": "Dover",
+          "notion.site": "Notion",
+          "builtin.com/job/": "Builtin",
+          "adp": "ADP"
+        };
+        var countryQueries = {
+          "canada": "+canada",
+          "usa": "+usa",
+          "uk": "+uk",
+          "germany": "+germany",
+          "france": "+france",
+          "australia": "+australia",
+          "brazil": "+brazil",
+          "china": "+china",
+          "russia": "+russia",
+          "india": "+india",
+          "japan": "+japan",
+          "south korea": "+south korea",
+          "mexico": "+mexico",
+          "italy": "+italy",
+          "spain": "+spain",
+          "netherlands": "+netherlands",
+          "sweden": "+sweden",
+          "norway": "+norway",
+          "denmark": "+denmark",
+          "finland": "+finland",
+          "poland": "+poland",
+          "ireland": "+ireland",
+          "belgium": "+belgium",
+          "switzerland": "+switzerland",
+          "new zealand": "+new zealand",
+          "argentina": "+argentina",
+          "chile": "+chile",
+          "south africa": "+south africa",
+          "egypt": "+egypt",
+          "saudi arabia": "+saudi arabia",
+          "turkey": "+turkey",
+          "greece": "+greece",
+          "portugal": "+portugal",
+          "austria": "+austria",
+          "hungary": "+hungary",
+          "czech republic": "+czech republic",
+          "slovakia": "+slovakia",
+          "romania": "+romania",
+          "bulgaria": "+bulgaria",
+          "croatia": "+croatia",
+          "serbia": "+serbia",
+          "malaysia": "+malaysia",
+          "singapore": "+singapore",
+          "indonesia": "+indonesia",
+          "philippines": "+philippines",
+          "vietnam": "+vietnam",
+          "thailand": "+thailand",
+          "israel": "+israel",
+          "united arab emirates": "+united arab emirates",
+          "qatar": "+qatar",
+          "kuwait": "+kuwait",
+          "nigeria": "+nigeria",
+          "kenya": "+kenya",
+          "ghana": "+ghana",
+          "morocco": "+morocco",
+          "estonia": "+estonia",
+          "lithuania": "+lithuania",
+          "latvia": "+latvia",
+          "slovenia": "+slovenia",
+          "luxembourg": "+luxembourg",
+          "ukraine": "+ukraine",
+          "united states": "+usa",
+          "united states of america": "+usa",
+          "usa": "+usa",
+          "pakistan": "+pakistan",
+          "bangladesh": "+bangladesh",
+          "sri lanka": "+sri lanka",
+          "kazakhstan": "+kazakhstan",
+          "uzbekistan": "+uzbekistan",
+          "ethiopia": "+ethiopia",
+          "tanzania": "+tanzania",
+          "uganda": "+uganda",
+          "ivory coast": "+ivory coast",
+          "algeria": "+algeria",
+          "oman": "+oman",
+          "bahrain": "+bahrain",
+          "jordan": "+jordan",
+          "lebanon": "+lebanon",
+          "jamaica": "+jamaica",
+          "dominican republic": "+dominican republic",
+          "cuba": "+cuba",
+          "colombia": "+colombia",
+          "peru": "+peru",
+          "ecuador": "+ecuador",
+          "uruguay": "+uruguay",
+          "paraguay": "+paraguay",
+          "fiji": "+fiji",
+          "papua new guinea": "+papua new guinea",
+          "samoa": "+samoa",
+          "armenia": "+armenia",
+          "azerbaijan": "+azerbaijan",
+          "alabama": "+alabama",
+          "alaska": "+alaska",
+          "arizona": "+arizona",
+          "arkansas": "+arkansas",
+          "california": "+california",
+          "colorado": "+colorado",
+          "connecticut": "+connecticut",
+          "delaware": "+delaware",
+          "florida": "+florida",
+          "georgia": "+georgia",
+          "hawaii": "+hawaii",
+          "idaho": "+idaho",
+          "illinois": "+illinois",
+          "indiana": "+indiana",
+          "iowa": "+iowa",
+          "kansas": "+kansas",
+          "kentucky": "+kentucky",
+          "louisiana": "+louisiana",
+          "maine": "+maine",
+          "maryland": "+maryland",
+          "massachusetts": "+massachusetts",
+          "michigan": "+michigan",
+          "minnesota": "+minnesota",
+          "mississippi": "+mississippi",
+          "missouri": "+missouri",
+          "montana": "+montana",
+          "nebraska": "+nebraska",
+          "nevada": "+nevada",
+          "new hampshire": "+new hampshire",
+          "new jersey": "+new jersey",
+          "new mexico": "+new mexico",
+          "new york": "+new york",
+          "north carolina": "+north carolina",
+          "north dakota": "+north dakota",
+          "ohio": "+ohio",
+          "oklahoma": "+oklahoma",
+          "oregon": "+oregon",
+          "pennsylvania": "+pennsylvania",
+          "rhode island": "+rhode island",
+          "south carolina": "+south carolina",
+          "south dakota": "+south dakota",
+          "tennessee": "+tennessee",
+          "texas": "+texas",
+          "utah": "+utah",
+          "vermont": "+vermont",
+          "virginia": "+virginia",
+          "washington": "+washington",
+          "west virginia": "+west virginia",
+          "wisconsin": "+wisconsin",
+          "wyoming": "+wyoming"
+        };
+        updateURL(jobTitles, timeFilter);
+        // Use selected location if provided
+        var countryQueryPart = selectedLocation ? countryQueries[selectedLocation] : '';
+        jobTitles.forEach(function(jobTitle) {
+          // Handle -remote in job title for backward compatibility
+          var excludeRemoteInTitle = jobTitle.toLowerCase().endsWith('-remote');
+          var shouldExcludeRemote = excludeRemote || excludeRemoteInTitle;
+          if (excludeRemoteInTitle) {
+            jobTitle = jobTitle.slice(0, -7); // Remove '-remote' from the job title
+          }
+          // Check if job title includes any of the countries and set the country query part
+          var detectedCountry = '';
+          if (!selectedLocation) { // Only check title for location if no location is explicitly selected
+            Object.keys(countryQueries).forEach(function(country) {
+              if (jobTitle.toLowerCase().includes(country)) {
+                countryQueryPart = countryQueries[country];
+                detectedCountry = country;
+              }
+            });
+            // If a country is detected, remove it from the job title
+            if (detectedCountry) {
+              jobTitle = jobTitle.replace(new RegExp(detectedCountry, 'ig'), '').trim();
+            }
+          }
+          var list = document.createElement("ul");
+          Object.keys(sites).forEach(function(site) {
+            var listItem = document.createElement("li");
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = site + '-' + jobTitle;
+            checkbox.name = site + '-' + jobTitle;
+            var label = document.createElement("label");
+            label.htmlFor = site + '-' + jobTitle;
+            var encodedJobTitle = encodeURIComponent(jobTitle.trim());
+            var url = '';
+            // Handle different sites
+            if (site === "remoterocketship.com") {
+              url = `https://${site}/?ref=briansjobsearch&jobTitle=${encodedJobTitle}`;
+            } else if (site === "remotive.com") {
+              url = `https://${site}/?via=briansjobsearch&query=${encodedJobTitle}`;
+            } else if (site === "adp") {
+              let googleQuery = '"' + jobTitle.trim() + '"';
+              googleQuery += " (site:workforcenow.adp.com OR site:myjobs.adp.com)";
+              if (!shouldExcludeRemote) {
+                googleQuery += " remote";
+              }
+              if (countryQueryPart) {
+                googleQuery += " " + countryQueryPart.substring(1);
+              }
+              url = `https://www.google.com/search?q=${encodeURIComponent(googleQuery)}${timeQueryParam}`;
+            } else {
+              url = `https://www.google.com/search?q="${encodedJobTitle}"+site:${site}`;
+              if (!shouldExcludeRemote) {
+                url += "+remote";
+              }
+              if (countryQueryPart) {
+                url += countryQueryPart;
+              }
+              url += timeQueryParam;
+            }
+            var link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("target", "_blank");
+            link.setAttribute("rel", "noopener noreferrer");
+            link.textContent = sites[site];
+            // Add event listener to the link
+            link.addEventListener('click', function() {
+              checkbox.checked = true;
+            });
+            label.appendChild(link);
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            list.appendChild(listItem);
+          });
+          var titleHeader = document.createElement("h3");
+          titleHeader.textContent = jobTitle + ' - ' + formattedTimeFilter;
+          if (selectedLocation) {
+            titleHeader.textContent += ' - ' + document.getElementById("locationSelect").options[document.getElementById("locationSelect").selectedIndex].text;
+          }
+          if (shouldExcludeRemote) {
+            titleHeader.textContent += ' (Excluding Remote)';
+          }
+          resultsDiv.appendChild(titleHeader);
+          resultsDiv.appendChild(list);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Brian's Job Search</h1>
+      <div id="searchForm">
+        <label for="jobTitle" class="visually-hidden">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Job Title" aria-describedby="jobTitleHelp">
+        <span id="jobTitleHelp" class="visually-hidden">Enter the title of the job you are searching for</span>
+        <label for="timeFilter" class="visually-hidden">Time Filter</label>
+        <select id="timeFilter" aria-describedby="timeFilterHelp">
+          <option value="all">All</option>
+          <option value="1hour">Past Hour</option>
+          <option value="4hours">Past 4 Hours</option>
+          <option value="8hours">Past 8 Hours</option>
+          <option value="12hours">Past 12 Hours</option>
+          <option value="24hours" selected="">Past 24 Hours</option>
+          <option value="48hours">Past 48 Hours</option>
+          <option value="72hours">Past 72 Hours</option>
+          <option value="week">Past Week</option>
+          <option value="month">Past Month</option>
+        </select>
+        <span id="timeFilterHelp" class="visually-hidden">Select how recent the job postings should be</span>
+        <button onclick="generateList()">Start</button>
+        <!-- Advanced Options Section -->
+        <div id="advancedOptions" class="notice">
+          <div class="option-group">
+            <label for="excludeRemote">Exclude Remote Jobs: </label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="excludeRemote">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="option-group">
+            <label for="locationSelect">Location: </label>
+            <select id="locationSelect"><option value="">All Locations</option><option value="usa">United States</option><option value="algeria">Algeria</option><option value="argentina">Argentina</option><option value="armenia">Armenia</option><option value="australia">Australia</option><option value="austria">Austria</option><option value="azerbaijan">Azerbaijan</option><option value="bahrain">Bahrain</option><option value="bangladesh">Bangladesh</option><option value="belgium">Belgium</option><option value="brazil">Brazil</option><option value="bulgaria">Bulgaria</option><option value="canada">Canada</option><option value="chile">Chile</option><option value="china">China</option><option value="colombia">Colombia</option><option value="croatia">Croatia</option><option value="cuba">Cuba</option><option value="czech republic">Czech Republic</option><option value="denmark">Denmark</option><option value="dominican republic">Dominican Republic</option><option value="ecuador">Ecuador</option><option value="egypt">Egypt</option><option value="estonia">Estonia</option><option value="ethiopia">Ethiopia</option><option value="fiji">Fiji</option><option value="finland">Finland</option><option value="france">France</option><option value="germany">Germany</option><option value="ghana">Ghana</option><option value="greece">Greece</option><option value="hungary">Hungary</option><option value="india">India</option><option value="indonesia">Indonesia</option><option value="ireland">Ireland</option><option value="israel">Israel</option><option value="italy">Italy</option><option value="ivory coast">Ivory Coast</option><option value="jamaica">Jamaica</option><option value="japan">Japan</option><option value="jordan">Jordan</option><option value="kazakhstan">Kazakhstan</option><option value="kenya">Kenya</option><option value="kuwait">Kuwait</option><option value="latvia">Latvia</option><option value="lebanon">Lebanon</option><option value="lithuania">Lithuania</option><option value="luxembourg">Luxembourg</option><option value="malaysia">Malaysia</option><option value="mexico">Mexico</option><option value="morocco">Morocco</option><option value="netherlands">Netherlands</option><option value="new zealand">New Zealand</option><option value="nigeria">Nigeria</option><option value="norway">Norway</option><option value="oman">Oman</option><option value="pakistan">Pakistan</option><option value="papua new guinea">Papua New Guinea</option><option value="paraguay">Paraguay</option><option value="peru">Peru</option><option value="philippines">Philippines</option><option value="poland">Poland</option><option value="portugal">Portugal</option><option value="qatar">Qatar</option><option value="romania">Romania</option><option value="russia">Russia</option><option value="samoa">Samoa</option><option value="saudi arabia">Saudi Arabia</option><option value="serbia">Serbia</option><option value="singapore">Singapore</option><option value="slovakia">Slovakia</option><option value="slovenia">Slovenia</option><option value="south africa">South Africa</option><option value="south korea">South Korea</option><option value="spain">Spain</option><option value="sri lanka">Sri Lanka</option><option value="sweden">Sweden</option><option value="switzerland">Switzerland</option><option value="tanzania">Tanzania</option><option value="thailand">Thailand</option><option value="turkey">Turkey</option><option value="uganda">Uganda</option><option value="uk">Uk</option><option value="ukraine">Ukraine</option><option value="united arab emirates">United Arab Emirates</option><option value="uruguay">Uruguay</option><option value="uzbekistan">Uzbekistan</option><option value="vietnam">Vietnam</option><option disabled="">─────── US States ───────</option><option value="alabama">Alabama</option><option value="alaska">Alaska</option><option value="arizona">Arizona</option><option value="arkansas">Arkansas</option><option value="california">California</option><option value="colorado">Colorado</option><option value="connecticut">Connecticut</option><option value="delaware">Delaware</option><option value="florida">Florida</option><option value="georgia">Georgia</option><option value="hawaii">Hawaii</option><option value="idaho">Idaho</option><option value="illinois">Illinois</option><option value="indiana">Indiana</option><option value="iowa">Iowa</option><option value="kansas">Kansas</option><option value="kentucky">Kentucky</option><option value="louisiana">Louisiana</option><option value="maine">Maine</option><option value="maryland">Maryland</option><option value="massachusetts">Massachusetts</option><option value="michigan">Michigan</option><option value="minnesota">Minnesota</option><option value="mississippi">Mississippi</option><option value="missouri">Missouri</option><option value="montana">Montana</option><option value="nebraska">Nebraska</option><option value="nevada">Nevada</option><option value="new hampshire">New Hampshire</option><option value="new jersey">New Jersey</option><option value="new mexico">New Mexico</option><option value="new york">New York</option><option value="north carolina">North Carolina</option><option value="north dakota">North Dakota</option><option value="ohio">Ohio</option><option value="oklahoma">Oklahoma</option><option value="oregon">Oregon</option><option value="pennsylvania">Pennsylvania</option><option value="rhode island">Rhode Island</option><option value="south carolina">South Carolina</option><option value="south dakota">South Dakota</option><option value="tennessee">Tennessee</option><option value="texas">Texas</option><option value="utah">Utah</option><option value="vermont">Vermont</option><option value="virginia">Virginia</option><option value="washington">Washington</option><option value="west virginia">West Virginia</option><option value="wisconsin">Wisconsin</option><option value="wyoming">Wyoming</option></select>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer> Created by Allison - Copyright 2025 
+        <a href="#" id="advancedLink">Advanced Search</a>
+      </p>
+    </footer>
+    <img id="analyticsTracker" src="https://queue.simpleanalyticscdn.com/noscript.gif?timezone=Europe%2FAmsterdam&amp;unique=0.7322716550978499" referrerpolicy="no-referrer-when-downgrade" alt="" width="1" height="1">
+</body></html>
