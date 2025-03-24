@@ -29,7 +29,7 @@
             </select>
             <span id="timeFilterHelp" class="visually-hidden">Select how recent the job postings should be</span>
             
-            <button onclick="generateList()">Start</button>
+            <button onclick="searchJobs()">Search Jobs</button>
 
             <div id="advancedOptions" class="notice">
                 <div class="option-group">
@@ -44,7 +44,6 @@
                     <label for="locationSelect">Location: </label>
                     <select id="locationSelect">
                         <option value="">All Locations</option>
-                        <!-- Country options would be populated here -->
                         <option value="usa">United States</option>
                         <option value="canada">Canada</option>
                         <!-- Add more countries as needed -->
@@ -56,7 +55,6 @@
         <section aria-live="polite">
             <h2 id="displayTitle" style="margin-top: 20px;"></h2>
             <div id="results"></div>
-            <div id="recommendedJobLinks" style="display: none;"></div>
         </section>
     </main>
 
