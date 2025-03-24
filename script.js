@@ -1,154 +1,86 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+async function searchJobs() {
+    const jobTitle = document.getElementById('jobTitle').value || '';
+    const timeFilter = document.getElementById('timeFilter').value;
+    const excludeRemote = document.getElementById('excludeRemote').checked;
+    const location = document.getElementById('locationSelect').value;
+
+    const displayTitle = document.getElementById('displayTitle');
+    const resultsContainer = document.getElementById('results');
+
+    // Clear previous results
+    resultsContainer.innerHTML = '';
+    displayTitle.textContent = `Jobs for "${jobTitle}" - Past ${timeFilter === '24hours' ? '24 Hours' : timeFilter}`;
+
+    try {
+        // This would typically be replaced with an actual API call
+        const response = await fetchJobResults(jobTitle, timeFilter, excludeRemote, location);
+        
+        // Create results list
+        const ul = document.createElement('ul');
+        response.forEach(job => {
+            const li = document.createElement('li');
+            
+            const titleEl = document.createElement('h3');
+            titleEl.textContent = job.title;
+            
+            const companyEl = document.createElement('p');
+            companyEl.textContent = `Company: ${job.company}`;
+            
+            const descriptionEl = document.createElement('p');
+            descriptionEl.textContent = job.description;
+            
+            const linkEl = document.createElement('a');
+            linkEl.href = job.url;
+            linkEl.textContent = 'View Job';
+            linkEl.target = '_blank';
+            linkEl.rel = 'noopener noreferrer';
+            
+            li.appendChild(titleEl);
+            li.appendChild(companyEl);
+            li.appendChild(descriptionEl);
+            li.appendChild(linkEl);
+            
+            ul.appendChild(li);
+        });
+
+        resultsContainer.appendChild(ul);
+    } catch (error) {
+        resultsContainer.innerHTML = `<p>Error fetching jobs: ${error.message}</p>`;
+    }
 }
 
-main {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+// Mock function to simulate job search API
+async function fetchJobResults(jobTitle, timeFilter, excludeRemote, location) {
+    // This is a mock implementation. In a real-world scenario, 
+    // this would be replaced with an actual API call
+    return [
+        {
+            title: 'Software Engineer',
+            company: 'Tech Innovations Inc.',
+            description: 'We are seeking a talented Software Engineer to join our dynamic team...',
+            url: 'https://example.com/job/software-engineer'
+        },
+        {
+            title: 'Product Manager',
+            company: 'Digital Solutions Corp',
+            description: 'Looking for an experienced Product Manager to lead our product strategy...',
+            url: 'https://example.com/job/product-manager'
+        },
+        {
+            title: 'Data Analyst',
+            company: 'Data Insights LLC',
+            description: 'We need a detail-oriented Data Analyst to help us drive business decisions...',
+            url: 'https://example.com/job/data-analyst'
+        }
+    ];
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-}
+// Add event listener to job title input to allow Enter key submission
+document.getElementById('jobTitle').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        searchJobs();
+    }
+});
 
-#searchForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-input, select, button {
-    padding: 12px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-#advancedOptions {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-.option-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-}
-
-.toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-.toggle-switch input:checked + .slider {
-    background-color: #2196F3;
-}
-
-.toggle-switch input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-#results ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#results li {
-    background-color: #f9f9f9;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#results li h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-#results li a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-#results li a:hover {
-    background-color: #45a049;
-}
+// Optional: Initialize with some default results
+document.addEventListener('DOMContentLoaded', searchJobs);
