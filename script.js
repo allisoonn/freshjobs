@@ -45,6 +45,8 @@ function sortJobs() {
 
     displayJobs(sortedJobs);
 }
-
+function generateList() {
+    alert("Search button clicked! Implement job search logic here.");
+}
 // Initial display
 displayJobs(jobs);
