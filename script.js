@@ -4,7 +4,9 @@ const jobs = [
     { title: "Product Manager", company: "Facebook", source: "Glassdoor", date: "2025-03-22" },
     { title: "UX Designer", company: "Apple", source: "LinkedIn", date: "2025-03-15" }
 ];
-
+document.getElementById("searchButton").addEventListener("click", function() {
+    generateList(); // This should be your function that processes the search
+});
 function displayJobs(filteredJobs) {
     const jobList = document.getElementById("jobList");
     jobList.innerHTML = ""; 
