@@ -1,6 +1,5 @@
-// Environment variable for API key (to be set in GitHub secrets)
-const GOOGLE_SEARCH_API_KEY = import.meta.env.VITE_GOOGLE_SEARCH_API_KEY || '';
-const GOOGLE_SEARCH_CX = import.meta.env.VITE_GOOGLE_SEARCH_CX || '';
+// Configuration
+const SCRAPING_API_ENDPOINT = '/api/scrape-jobs'; // Your backend proxy endpoint
 
 async function searchJobs() {
     const jobTitle = document.getElementById('jobTitle').value || '';
@@ -16,17 +15,27 @@ async function searchJobs() {
     displayTitle.textContent = `Jobs for "${jobTitle}" - Past ${timeFilter === '24hours' ? '24 Hours' : timeFilter}`;
 
     try {
-        const response = await fetchJobResults(jobTitle, location, excludeRemote);
+        // Construct search parameters
+        const searchParams = {
+            query: jobTitle,
+            location: location,
+            excludeRemote: excludeRemote,
+            timeFilter: timeFilter
+        };
+
+        // Fetch results from scraping proxy
+        const response = await fetchScrapedJobResults(searchParams);
         
         // Clear loading message
         resultsContainer.innerHTML = '';
 
-        // Create results list
+        // Handle no results
         if (response.length === 0) {
             resultsContainer.innerHTML = '<p>No jobs found. Try a different search.</p>';
             return;
         }
 
+        // Render results
         const ul = document.createElement('ul');
         response.forEach(job => {
             const li = document.createElement('li');
@@ -41,11 +50,14 @@ async function searchJobs() {
             locationEl.innerHTML = `<strong>Location:</strong> ${job.location}`;
             
             const descriptionEl = document.createElement('p');
-            descriptionEl.innerHTML = `<strong>Description:</strong> ${truncateDescription(job.snippet)}`;
+            descriptionEl.innerHTML = `<strong>Description:</strong> ${truncateDescription(job.description)}`;
+            
+            const sourceEl = document.createElement('p');
+            sourceEl.innerHTML = `<strong>Source:</strong> ${job.source}`;
             
             const linkEl = document.createElement('a');
             linkEl.href = job.link;
-            linkEl.textContent = 'View Job';
+            linkEl.textContent = 'View Original Listing';
             linkEl.target = '_blank';
             linkEl.rel = 'noopener noreferrer';
             
@@ -53,6 +65,7 @@ async function searchJobs() {
             li.appendChild(companyEl);
             li.appendChild(locationEl);
             li.appendChild(descriptionEl);
+            li.appendChild(sourceEl);
             li.appendChild(linkEl);
             
             ul.appendChild(li);
@@ -65,54 +78,37 @@ async function searchJobs() {
     }
 }
 
-// Helper function to truncate long descriptions
-function truncateDescription(description, maxLength = 200) {
-    if (!description) return 'No description available';
-    if (description.length <= maxLength) return description;
-    return description.substring(0, maxLength) + '...';
-}
-
-// Fetch job results 
-async function fetchJobResults(jobTitle, location, excludeRemote) {
-    // Fallback to local results if API key is not set
-    if (!GOOGLE_SEARCH_API_KEY || !GOOGLE_SEARCH_CX) {
-        return getMockJobResults(jobTitle);
-    }
-
-    // Construct search query
-    let searchQuery = `${jobTitle} jobs`;
-    if (location) {
-        searchQuery += ` in ${location}`;
-    }
-    if (excludeRemote) {
-        searchQuery += ' -remote';
-    }
-
-    // Encode the search query
-    const encodedQuery = encodeURIComponent(searchQuery);
-
+// Fetch scraped job results via backend proxy
+async function fetchScrapedJobResults(searchParams) {
     try {
-        // Use Google Search Results JSON API
-        const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${GOOGLE_SEARCH_API_KEY}&cx=${GOOGLE_SEARCH_CX}&q=${encodedQuery}&num=10`);
-        
+        // Multiple search sources for comprehensive results
+        const searchQueries = [
+            `${searchParams.query} jobs`,
+            `${searchParams.query} careers`,
+            `"${searchParams.query}" remote jobs`
+        ];
+
+        const response = await fetch(SCRAPING_API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                queries: searchQueries,
+                location: searchParams.location,
+                excludeRemote: searchParams.excludeRemote
+            })
+        });
+
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Scraping network response was not ok');
         }
 
         const data = await response.json();
-
-        // Transform Google Search results into job listings
-        return (data.items || []).map(item => ({
-            title: item.title,
-            company: extractCompanyFromTitle(item.title),
-            location: extractLocationFromSnippet(item.snippet),
-            snippet: item.snippet,
-            link: item.link
-        }));
+        return data.jobs || [];
     } catch (error) {
-        console.error('Error fetching job results:', error);
-        // Fallback to mock results if API call fails
-        return getMockJobResults(jobTitle);
+        console.error('Scraping error:', error);
+        return getMockJobResults(searchParams.query);
     }
 }
 
@@ -123,52 +119,30 @@ function getMockJobResults(jobTitle) {
             title: `${jobTitle} Position`,
             company: 'Example Company',
             location: 'Remote',
-            snippet: 'We are seeking a talented professional for an exciting opportunity.',
-            link: '#'
-        },
-        {
-            title: `Senior ${jobTitle}`,
-            company: 'Tech Innovations Inc.',
-            location: 'New York, NY',
-            snippet: 'Join our team and make an impact in a dynamic environment.',
+            description: 'We are seeking a talented professional for an exciting opportunity.',
+            source: 'Mock Data',
             link: '#'
         }
     ];
 }
 
-// Helper function to extract company name from title
-function extractCompanyFromTitle(title) {
-    // Split the title and take the last part as company name
-    const parts = title.split(' - ');
-    return parts.length > 1 ? parts[parts.length - 1] : 'Unknown Company';
+// Helper function to truncate descriptions
+function truncateDescription(description, maxLength = 200) {
+    if (!description) return 'No description available';
+    return description.length > maxLength 
+        ? description.substring(0, maxLength) + '...' 
+        : description;
 }
 
-// Helper function to extract location from snippet
-function extractLocationFromSnippet(snippet) {
-    // Look for location-like words in the snippet
-    const locationKeywords = [
-        'CA', 'NY', 'TX', 'IL', 'FL', 'remote', 'hybrid', 
-        'onsite', 'United States', 'US', 'Canada'
-    ];
-    
-    for (let keyword of locationKeywords) {
-        if (snippet && snippet.includes(keyword)) {
-            return keyword;
-        }
-    }
-    return 'Location Not Specified';
-}
-
-// Add event listener to job title input to allow Enter key submission
+// Event Listeners
 document.getElementById('jobTitle').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         searchJobs();
     }
 });
 
-// Initialize with some default results
+// Initialize with default search
 document.addEventListener('DOMContentLoaded', () => {
-    // Optional: You can set a default search or leave it empty
     document.getElementById('jobTitle').value = 'Software Engineer';
     searchJobs();
 });
